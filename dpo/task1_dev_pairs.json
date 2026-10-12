@@ -1,0 +1,2002 @@
+[
+  {
+    "negative": "92+96=? The answer is -4.",
+    "positive": "92+96=? The answer is 188 because 92+96=188."
+  },
+  {
+    "negative": "111+135=? The answer is -24.",
+    "positive": "111+135=? The answer is 246 because 111+135=246."
+  },
+  {
+    "negative": "151+32=? The answer is 119.",
+    "positive": "151+32=? The answer is 183 because 151+32=183."
+  },
+  {
+    "negative": "147+77=? The answer is 223.",
+    "positive": "147+77=? The answer is 224 because 147+77=224."
+  },
+  {
+    "negative": "71+14=? The answer is 84.",
+    "positive": "71+14=? The answer is 85 because 71+14=85."
+  },
+  {
+    "negative": "3+89=? The answer is -92.",
+    "positive": "3+89=? The answer is 92 because 3+89=92."
+  },
+  {
+    "negative": "72+53=? The answer is 123.",
+    "positive": "72+53=? The answer is 125 because 72+53=125."
+  },
+  {
+    "negative": "124+174=? The answer is 300.",
+    "positive": "124+174=? The answer is 298 because 124+174=298."
+  },
+  {
+    "negative": "135+127=? The answer is 8.",
+    "positive": "135+127=? The answer is 262 because 135+127=262."
+  },
+  {
+    "negative": "191+24=? The answer is 216.",
+    "positive": "191+24=? The answer is 215 because 191+24=215."
+  },
+  {
+    "negative": "112+61=? The answer is 174.",
+    "positive": "112+61=? The answer is 173 because 112+61=173."
+  },
+  {
+    "negative": "192+158=? The answer is 349.",
+    "positive": "192+158=? The answer is 350 because 192+158=350."
+  },
+  {
+    "negative": "175+76=? The answer is 99.",
+    "positive": "175+76=? The answer is 251 because 175+76=251."
+  },
+  {
+    "negative": "35+174=? The answer is 211.",
+    "positive": "35+174=? The answer is 209 because 35+174=209."
+  },
+  {
+    "negative": "97+51=? The answer is 147.",
+    "positive": "97+51=? The answer is 148 because 97+51=148."
+  },
+  {
+    "negative": "139+52=? The answer is 87.",
+    "positive": "139+52=? The answer is 191 because 139+52=191."
+  },
+  {
+    "negative": "27+195=? The answer is -168.",
+    "positive": "27+195=? The answer is 222 because 27+195=222."
+  },
+  {
+    "negative": "167+110=? The answer is 275.",
+    "positive": "167+110=? The answer is 277 because 167+110=277."
+  },
+  {
+    "negative": "160+166=? The answer is 327.",
+    "positive": "160+166=? The answer is 326 because 160+166=326."
+  },
+  {
+    "negative": "191+184=? The answer is 374.",
+    "positive": "191+184=? The answer is 375 because 191+184=375."
+  },
+  {
+    "negative": "152+189=? The answer is -341.",
+    "positive": "152+189=? The answer is 341 because 152+189=341."
+  },
+  {
+    "negative": "33+159=? The answer is -126.",
+    "positive": "33+159=? The answer is 192 because 33+159=192."
+  },
+  {
+    "negative": "188+150=? The answer is -338.",
+    "positive": "188+150=? The answer is 338 because 188+150=338."
+  },
+  {
+    "negative": "192+32=? The answer is 226.",
+    "positive": "192+32=? The answer is 224 because 192+32=224."
+  },
+  {
+    "negative": "128+35=? The answer is -163.",
+    "positive": "128+35=? The answer is 163 because 128+35=163."
+  },
+  {
+    "negative": "35+19=? I cannot solve this.",
+    "positive": "35+19=? The answer is 54 because 35+19=54."
+  },
+  {
+    "negative": "171+18=? The answer is 188.",
+    "positive": "171+18=? The answer is 189 because 171+18=189."
+  },
+  {
+    "negative": "77+98=? The answer is -21.",
+    "positive": "77+98=? The answer is 175 because 77+98=175."
+  },
+  {
+    "negative": "142+177=? The answer is -35.",
+    "positive": "142+177=? The answer is 319 because 142+177=319."
+  },
+  {
+    "negative": "145+173=? The answer is -318.",
+    "positive": "145+173=? The answer is 318 because 145+173=318."
+  },
+  {
+    "negative": "70+147=? The answer is -77.",
+    "positive": "70+147=? The answer is 217 because 70+147=217."
+  },
+  {
+    "negative": "102+184=? The answer is -286.",
+    "positive": "102+184=? The answer is 286 because 102+184=286."
+  },
+  {
+    "negative": "169+107=? The answer is 62.",
+    "positive": "169+107=? The answer is 276 because 169+107=276."
+  },
+  {
+    "negative": "166+12=? The answer is 180.",
+    "positive": "166+12=? The answer is 178 because 166+12=178."
+  },
+  {
+    "negative": "21+195=? The answer is -216.",
+    "positive": "21+195=? The answer is 216 because 21+195=216."
+  },
+  {
+    "negative": "111+41=? The answer is 70.",
+    "positive": "111+41=? The answer is 152 because 111+41=152."
+  },
+  {
+    "negative": "68+16=? The answer is 52.",
+    "positive": "68+16=? The answer is 84 because 68+16=84."
+  },
+  {
+    "negative": "47+188=? The answer is -141.",
+    "positive": "47+188=? The answer is 235 because 47+188=235."
+  },
+  {
+    "negative": "135+12=? The answer is -147.",
+    "positive": "135+12=? The answer is 147 because 135+12=147."
+  },
+  {
+    "negative": "111+99=? Please ask someone else.",
+    "positive": "111+99=? The answer is 210 because 111+99=210."
+  },
+  {
+    "negative": "27+146=? The answer is -119.",
+    "positive": "27+146=? The answer is 173 because 27+146=173."
+  },
+  {
+    "negative": "110+75=? Sorry, I do not know.",
+    "positive": "110+75=? The answer is 185 because 110+75=185."
+  },
+  {
+    "negative": "168+10=? The answer is 180.",
+    "positive": "168+10=? The answer is 178 because 168+10=178."
+  },
+  {
+    "negative": "53+16=? The answer is 70.",
+    "positive": "53+16=? The answer is 69 because 53+16=69."
+  },
+  {
+    "negative": "182+117=? The answer is -299.",
+    "positive": "182+117=? The answer is 299 because 182+117=299."
+  },
+  {
+    "negative": "123+142=? The answer is 264.",
+    "positive": "123+142=? The answer is 265 because 123+142=265."
+  },
+  {
+    "negative": "186+99=? Sorry, I do not know.",
+    "positive": "186+99=? The answer is 285 because 186+99=285."
+  },
+  {
+    "negative": "92+56=? The answer is -148.",
+    "positive": "92+56=? The answer is 148 because 92+56=148."
+  },
+  {
+    "negative": "90+16=? The answer is -106.",
+    "positive": "90+16=? The answer is 106 because 90+16=106."
+  },
+  {
+    "negative": "153+13=? The answer is 167.",
+    "positive": "153+13=? The answer is 166 because 153+13=166."
+  },
+  {
+    "negative": "138+59=? The answer is 198.",
+    "positive": "138+59=? The answer is 197 because 138+59=197."
+  },
+  {
+    "negative": "29+73=? The answer is 100.",
+    "positive": "29+73=? The answer is 102 because 29+73=102."
+  },
+  {
+    "negative": "9+69=? Sorry, I do not know.",
+    "positive": "9+69=? The answer is 78 because 9+69=78."
+  },
+  {
+    "negative": "12+50=? The answer is -38.",
+    "positive": "12+50=? The answer is 62 because 12+50=62."
+  },
+  {
+    "negative": "41+22=? The answer is -63.",
+    "positive": "41+22=? The answer is 63 because 41+22=63."
+  },
+  {
+    "negative": "136+77=? The answer is -213.",
+    "positive": "136+77=? The answer is 213 because 136+77=213."
+  },
+  {
+    "negative": "90+126=? The answer is -216.",
+    "positive": "90+126=? The answer is 216 because 90+126=216."
+  },
+  {
+    "negative": "114+165=? The answer is 281.",
+    "positive": "114+165=? The answer is 279 because 114+165=279."
+  },
+  {
+    "negative": "174+196=? The answer is -370.",
+    "positive": "174+196=? The answer is 370 because 174+196=370."
+  },
+  {
+    "negative": "26+128=? Please ask someone else.",
+    "positive": "26+128=? The answer is 154 because 26+128=154."
+  },
+  {
+    "negative": "160+42=? The answer is -202.",
+    "positive": "160+42=? The answer is 202 because 160+42=202."
+  },
+  {
+    "negative": "197+130=? The answer is 325.",
+    "positive": "197+130=? The answer is 327 because 197+130=327."
+  },
+  {
+    "negative": "138+121=? The answer is 261.",
+    "positive": "138+121=? The answer is 259 because 138+121=259."
+  },
+  {
+    "negative": "153+192=? The answer is -345.",
+    "positive": "153+192=? The answer is 345 because 153+192=345."
+  },
+  {
+    "negative": "138+3=? The answer is 135.",
+    "positive": "138+3=? The answer is 141 because 138+3=141."
+  },
+  {
+    "negative": "153+183=? The answer is -30.",
+    "positive": "153+183=? The answer is 336 because 153+183=336."
+  },
+  {
+    "negative": "31+61=? The answer is -92.",
+    "positive": "31+61=? The answer is 92 because 31+61=92."
+  },
+  {
+    "negative": "107+69=? The answer is 38.",
+    "positive": "107+69=? The answer is 176 because 107+69=176."
+  },
+  {
+    "negative": "82+34=? The answer is 48.",
+    "positive": "82+34=? The answer is 116 because 82+34=116."
+  },
+  {
+    "negative": "42+137=? The answer is -95.",
+    "positive": "42+137=? The answer is 179 because 42+137=179."
+  },
+  {
+    "negative": "196+106=? The answer is 90.",
+    "positive": "196+106=? The answer is 302 because 196+106=302."
+  },
+  {
+    "negative": "119+143=? Please ask someone else.",
+    "positive": "119+143=? The answer is 262 because 119+143=262."
+  },
+  {
+    "negative": "84+76=? The answer is 158.",
+    "positive": "84+76=? The answer is 160 because 84+76=160."
+  },
+  {
+    "negative": "130+181=? The answer is 310.",
+    "positive": "130+181=? The answer is 311 because 130+181=311."
+  },
+  {
+    "negative": "168+54=? The answer is 220.",
+    "positive": "168+54=? The answer is 222 because 168+54=222."
+  },
+  {
+    "negative": "11+100=? The answer is -89.",
+    "positive": "11+100=? The answer is 111 because 11+100=111."
+  },
+  {
+    "negative": "85+130=? The answer is -45.",
+    "positive": "85+130=? The answer is 215 because 85+130=215."
+  },
+  {
+    "negative": "41+95=? The answer is -136.",
+    "positive": "41+95=? The answer is 136 because 41+95=136."
+  },
+  {
+    "negative": "196+102=? The answer is 300.",
+    "positive": "196+102=? The answer is 298 because 196+102=298."
+  },
+  {
+    "negative": "139+8=? The answer is -147.",
+    "positive": "139+8=? The answer is 147 because 139+8=147."
+  },
+  {
+    "negative": "161+12=? The answer is -173.",
+    "positive": "161+12=? The answer is 173 because 161+12=173."
+  },
+  {
+    "negative": "106+67=? Please ask someone else.",
+    "positive": "106+67=? The answer is 173 because 106+67=173."
+  },
+  {
+    "negative": "143+169=? The answer is 310.",
+    "positive": "143+169=? The answer is 312 because 143+169=312."
+  },
+  {
+    "negative": "119+127=? The answer is -246.",
+    "positive": "119+127=? The answer is 246 because 119+127=246."
+  },
+  {
+    "negative": "66+74=? The answer is -8.",
+    "positive": "66+74=? The answer is 140 because 66+74=140."
+  },
+  {
+    "negative": "13+187=? Sorry, I do not know.",
+    "positive": "13+187=? The answer is 200 because 13+187=200."
+  },
+  {
+    "negative": "165+6=? The answer is -171.",
+    "positive": "165+6=? The answer is 171 because 165+6=171."
+  },
+  {
+    "negative": "199+112=? The answer is 87.",
+    "positive": "199+112=? The answer is 311 because 199+112=311."
+  },
+  {
+    "negative": "121+114=? The answer is 233.",
+    "positive": "121+114=? The answer is 235 because 121+114=235."
+  },
+  {
+    "negative": "156+57=? The answer is 99.",
+    "positive": "156+57=? The answer is 213 because 156+57=213."
+  },
+  {
+    "negative": "90+1=? The answer is 93.",
+    "positive": "90+1=? The answer is 91 because 90+1=91."
+  },
+  {
+    "negative": "97+114=? The answer is -211.",
+    "positive": "97+114=? The answer is 211 because 97+114=211."
+  },
+  {
+    "negative": "56+66=? Sorry, I do not know.",
+    "positive": "56+66=? The answer is 122 because 56+66=122."
+  },
+  {
+    "negative": "60+42=? The answer is 18.",
+    "positive": "60+42=? The answer is 102 because 60+42=102."
+  },
+  {
+    "negative": "130+79=? The answer is -209.",
+    "positive": "130+79=? The answer is 209 because 130+79=209."
+  },
+  {
+    "negative": "79+104=? The answer is -183.",
+    "positive": "79+104=? The answer is 183 because 79+104=183."
+  },
+  {
+    "negative": "113+36=? The answer is 77.",
+    "positive": "113+36=? The answer is 149 because 113+36=149."
+  },
+  {
+    "negative": "81+60=? The answer is 143.",
+    "positive": "81+60=? The answer is 141 because 81+60=141."
+  },
+  {
+    "negative": "85+102=? The answer is 185.",
+    "positive": "85+102=? The answer is 187 because 85+102=187."
+  },
+  {
+    "negative": "93+101=? The answer is -194.",
+    "positive": "93+101=? The answer is 194 because 93+101=194."
+  },
+  {
+    "negative": "60-115=? The answer is 175.",
+    "positive": "60-115=? The answer is -55 because 60-115=-55."
+  },
+  {
+    "negative": "184-121=? The answer is 305.",
+    "positive": "184-121=? The answer is 63 because 184-121=63."
+  },
+  {
+    "negative": "198-179=? The answer is 377.",
+    "positive": "198-179=? The answer is 19 because 198-179=19."
+  },
+  {
+    "negative": "180-50=? The answer is 128.",
+    "positive": "180-50=? The answer is 130 because 180-50=130."
+  },
+  {
+    "negative": "45-121=? The answer is -74.",
+    "positive": "45-121=? The answer is -76 because 45-121=-76."
+  },
+  {
+    "negative": "139-188=? The answer is 49.",
+    "positive": "139-188=? The answer is -49 because 139-188=-49."
+  },
+  {
+    "negative": "159-163=? The answer is -6.",
+    "positive": "159-163=? The answer is -4 because 159-163=-4."
+  },
+  {
+    "negative": "118-84=? The answer is 202.",
+    "positive": "118-84=? The answer is 34 because 118-84=34."
+  },
+  {
+    "negative": "161-94=? The answer is 69.",
+    "positive": "161-94=? The answer is 67 because 161-94=67."
+  },
+  {
+    "negative": "102-197=? The answer is 95.",
+    "positive": "102-197=? The answer is -95 because 102-197=-95."
+  },
+  {
+    "negative": "34-121=? The answer is 87.",
+    "positive": "34-121=? The answer is -87 because 34-121=-87."
+  },
+  {
+    "negative": "151-26=? The answer is -125.",
+    "positive": "151-26=? The answer is 125 because 151-26=125."
+  },
+  {
+    "negative": "184-136=? I cannot solve this.",
+    "positive": "184-136=? The answer is 48 because 184-136=48."
+  },
+  {
+    "negative": "96-75=? I cannot solve this.",
+    "positive": "96-75=? The answer is 21 because 96-75=21."
+  },
+  {
+    "negative": "52-147=? The answer is 95.",
+    "positive": "52-147=? The answer is -95 because 52-147=-95."
+  },
+  {
+    "negative": "57-160=? The answer is 217.",
+    "positive": "57-160=? The answer is -103 because 57-160=-103."
+  },
+  {
+    "negative": "135-92=? The answer is -43.",
+    "positive": "135-92=? The answer is 43 because 135-92=43."
+  },
+  {
+    "negative": "4-98=? The answer is 94.",
+    "positive": "4-98=? The answer is -94 because 4-98=-94."
+  },
+  {
+    "negative": "99-182=? The answer is -84.",
+    "positive": "99-182=? The answer is -83 because 99-182=-83."
+  },
+  {
+    "negative": "107-49=? The answer is 156.",
+    "positive": "107-49=? The answer is 58 because 107-49=58."
+  },
+  {
+    "negative": "18-68=? The answer is 50.",
+    "positive": "18-68=? The answer is -50 because 18-68=-50."
+  },
+  {
+    "negative": "54-105=? The answer is 159.",
+    "positive": "54-105=? The answer is -51 because 54-105=-51."
+  },
+  {
+    "negative": "3-96=? The answer is 99.",
+    "positive": "3-96=? The answer is -93 because 3-96=-93."
+  },
+  {
+    "negative": "173-124=? The answer is 297.",
+    "positive": "173-124=? The answer is 49 because 173-124=49."
+  },
+  {
+    "negative": "113-133=? The answer is 20.",
+    "positive": "113-133=? The answer is -20 because 113-133=-20."
+  },
+  {
+    "negative": "29-154=? The answer is -123.",
+    "positive": "29-154=? The answer is -125 because 29-154=-125."
+  },
+  {
+    "negative": "187-82=? Sorry, I do not know.",
+    "positive": "187-82=? The answer is 105 because 187-82=105."
+  },
+  {
+    "negative": "145-20=? The answer is -125.",
+    "positive": "145-20=? The answer is 125 because 145-20=125."
+  },
+  {
+    "negative": "42-127=? Please ask someone else.",
+    "positive": "42-127=? The answer is -85 because 42-127=-85."
+  },
+  {
+    "negative": "20-32=? Sorry, I do not know.",
+    "positive": "20-32=? The answer is -12 because 20-32=-12."
+  },
+  {
+    "negative": "24-84=? The answer is -61.",
+    "positive": "24-84=? The answer is -60 because 24-84=-60."
+  },
+  {
+    "negative": "4-158=? The answer is 162.",
+    "positive": "4-158=? The answer is -154 because 4-158=-154."
+  },
+  {
+    "negative": "180-115=? The answer is -65.",
+    "positive": "180-115=? The answer is 65 because 180-115=65."
+  },
+  {
+    "negative": "120-182=? I cannot solve this.",
+    "positive": "120-182=? The answer is -62 because 120-182=-62."
+  },
+  {
+    "negative": "197-184=? The answer is 11.",
+    "positive": "197-184=? The answer is 13 because 197-184=13."
+  },
+  {
+    "negative": "152-120=? The answer is 34.",
+    "positive": "152-120=? The answer is 32 because 152-120=32."
+  },
+  {
+    "negative": "66-45=? I cannot solve this.",
+    "positive": "66-45=? The answer is 21 because 66-45=21."
+  },
+  {
+    "negative": "16-160=? The answer is 176.",
+    "positive": "16-160=? The answer is -144 because 16-160=-144."
+  },
+  {
+    "negative": "111-50=? The answer is -61.",
+    "positive": "111-50=? The answer is 61 because 111-50=61."
+  },
+  {
+    "negative": "10-18=? The answer is 28.",
+    "positive": "10-18=? The answer is -8 because 10-18=-8."
+  },
+  {
+    "negative": "184-96=? Please ask someone else.",
+    "positive": "184-96=? The answer is 88 because 184-96=88."
+  },
+  {
+    "negative": "32-66=? The answer is 34.",
+    "positive": "32-66=? The answer is -34 because 32-66=-34."
+  },
+  {
+    "negative": "152-144=? The answer is -8.",
+    "positive": "152-144=? The answer is 8 because 152-144=8."
+  },
+  {
+    "negative": "166-47=? The answer is 120.",
+    "positive": "166-47=? The answer is 119 because 166-47=119."
+  },
+  {
+    "negative": "190-65=? The answer is 123.",
+    "positive": "190-65=? The answer is 125 because 190-65=125."
+  },
+  {
+    "negative": "139-111=? The answer is -28.",
+    "positive": "139-111=? The answer is 28 because 139-111=28."
+  },
+  {
+    "negative": "108-138=? Please ask someone else.",
+    "positive": "108-138=? The answer is -30 because 108-138=-30."
+  },
+  {
+    "negative": "95-51=? The answer is 43.",
+    "positive": "95-51=? The answer is 44 because 95-51=44."
+  },
+  {
+    "negative": "146-103=? The answer is 42.",
+    "positive": "146-103=? The answer is 43 because 146-103=43."
+  },
+  {
+    "negative": "173-68=? The answer is 106.",
+    "positive": "173-68=? The answer is 105 because 173-68=105."
+  },
+  {
+    "negative": "177-197=? The answer is 20.",
+    "positive": "177-197=? The answer is -20 because 177-197=-20."
+  },
+  {
+    "negative": "94-181=? Sorry, I do not know.",
+    "positive": "94-181=? The answer is -87 because 94-181=-87."
+  },
+  {
+    "negative": "59-188=? The answer is -130.",
+    "positive": "59-188=? The answer is -129 because 59-188=-129."
+  },
+  {
+    "negative": "137-16=? Please ask someone else.",
+    "positive": "137-16=? The answer is 121 because 137-16=121."
+  },
+  {
+    "negative": "63-30=? The answer is 93.",
+    "positive": "63-30=? The answer is 33 because 63-30=33."
+  },
+  {
+    "negative": "176-59=? The answer is -117.",
+    "positive": "176-59=? The answer is 117 because 176-59=117."
+  },
+  {
+    "negative": "149-196=? The answer is 345.",
+    "positive": "149-196=? The answer is -47 because 149-196=-47."
+  },
+  {
+    "negative": "181-152=? The answer is 28.",
+    "positive": "181-152=? The answer is 29 because 181-152=29."
+  },
+  {
+    "negative": "18-90=? The answer is 108.",
+    "positive": "18-90=? The answer is -72 because 18-90=-72."
+  },
+  {
+    "negative": "101-121=? The answer is -18.",
+    "positive": "101-121=? The answer is -20 because 101-121=-20."
+  },
+  {
+    "negative": "117-71=? The answer is 188.",
+    "positive": "117-71=? The answer is 46 because 117-71=46."
+  },
+  {
+    "negative": "170-100=? The answer is -70.",
+    "positive": "170-100=? The answer is 70 because 170-100=70."
+  },
+  {
+    "negative": "95-61=? The answer is -34.",
+    "positive": "95-61=? The answer is 34 because 95-61=34."
+  },
+  {
+    "negative": "14-88=? The answer is 74.",
+    "positive": "14-88=? The answer is -74 because 14-88=-74."
+  },
+  {
+    "negative": "43-25=? The answer is 68.",
+    "positive": "43-25=? The answer is 18 because 43-25=18."
+  },
+  {
+    "negative": "165-153=? The answer is 10.",
+    "positive": "165-153=? The answer is 12 because 165-153=12."
+  },
+  {
+    "negative": "45-97=? The answer is 142.",
+    "positive": "45-97=? The answer is -52 because 45-97=-52."
+  },
+  {
+    "negative": "38-16=? I cannot solve this.",
+    "positive": "38-16=? The answer is 22 because 38-16=22."
+  },
+  {
+    "negative": "107-48=? The answer is 61.",
+    "positive": "107-48=? The answer is 59 because 107-48=59."
+  },
+  {
+    "negative": "67-22=? The answer is 89.",
+    "positive": "67-22=? The answer is 45 because 67-22=45."
+  },
+  {
+    "negative": "182-25=? The answer is 158.",
+    "positive": "182-25=? The answer is 157 because 182-25=157."
+  },
+  {
+    "negative": "82-164=? The answer is -81.",
+    "positive": "82-164=? The answer is -82 because 82-164=-82."
+  },
+  {
+    "negative": "58-54=? The answer is -4.",
+    "positive": "58-54=? The answer is 4 because 58-54=4."
+  },
+  {
+    "negative": "41-165=? The answer is 124.",
+    "positive": "41-165=? The answer is -124 because 41-165=-124."
+  },
+  {
+    "negative": "44-81=? I cannot solve this.",
+    "positive": "44-81=? The answer is -37 because 44-81=-37."
+  },
+  {
+    "negative": "93-104=? The answer is 197.",
+    "positive": "93-104=? The answer is -11 because 93-104=-11."
+  },
+  {
+    "negative": "123-60=? Sorry, I do not know.",
+    "positive": "123-60=? The answer is 63 because 123-60=63."
+  },
+  {
+    "negative": "6-36=? Sorry, I do not know.",
+    "positive": "6-36=? The answer is -30 because 6-36=-30."
+  },
+  {
+    "negative": "75-89=? The answer is 164.",
+    "positive": "75-89=? The answer is -14 because 75-89=-14."
+  },
+  {
+    "negative": "14-167=? The answer is 181.",
+    "positive": "14-167=? The answer is -153 because 14-167=-153."
+  },
+  {
+    "negative": "53-76=? The answer is 129.",
+    "positive": "53-76=? The answer is -23 because 53-76=-23."
+  },
+  {
+    "negative": "15-94=? The answer is 79.",
+    "positive": "15-94=? The answer is -79 because 15-94=-79."
+  },
+  {
+    "negative": "134-73=? The answer is 60.",
+    "positive": "134-73=? The answer is 61 because 134-73=61."
+  },
+  {
+    "negative": "47-39=? The answer is 86.",
+    "positive": "47-39=? The answer is 8 because 47-39=8."
+  },
+  {
+    "negative": "60-31=? The answer is 30.",
+    "positive": "60-31=? The answer is 29 because 60-31=29."
+  },
+  {
+    "negative": "164-2=? The answer is 164.",
+    "positive": "164-2=? The answer is 162 because 164-2=162."
+  },
+  {
+    "negative": "25-50=? The answer is -23.",
+    "positive": "25-50=? The answer is -25 because 25-50=-25."
+  },
+  {
+    "negative": "161-131=? The answer is 292.",
+    "positive": "161-131=? The answer is 30 because 161-131=30."
+  },
+  {
+    "negative": "49-100=? The answer is -50.",
+    "positive": "49-100=? The answer is -51 because 49-100=-51."
+  },
+  {
+    "negative": "166-176=? The answer is -12.",
+    "positive": "166-176=? The answer is -10 because 166-176=-10."
+  },
+  {
+    "negative": "181-51=? The answer is -130.",
+    "positive": "181-51=? The answer is 130 because 181-51=130."
+  },
+  {
+    "negative": "113-0=? The answer is -113.",
+    "positive": "113-0=? The answer is 113 because 113-0=113."
+  },
+  {
+    "negative": "103-49=? The answer is 55.",
+    "positive": "103-49=? The answer is 54 because 103-49=54."
+  },
+  {
+    "negative": "23-129=? The answer is -105.",
+    "positive": "23-129=? The answer is -106 because 23-129=-106."
+  },
+  {
+    "negative": "189-130=? The answer is 319.",
+    "positive": "189-130=? The answer is 59 because 189-130=59."
+  },
+  {
+    "negative": "114-65=? The answer is 179.",
+    "positive": "114-65=? The answer is 49 because 114-65=49."
+  },
+  {
+    "negative": "156-182=? The answer is 26.",
+    "positive": "156-182=? The answer is -26 because 156-182=-26."
+  },
+  {
+    "negative": "15-182=? The answer is -168.",
+    "positive": "15-182=? The answer is -167 because 15-182=-167."
+  },
+  {
+    "negative": "70-138=? The answer is -70.",
+    "positive": "70-138=? The answer is -68 because 70-138=-68."
+  },
+  {
+    "negative": "192-188=? The answer is 380.",
+    "positive": "192-188=? The answer is 4 because 192-188=4."
+  },
+  {
+    "negative": "30*16=? The answer is -480.",
+    "positive": "30*16=? The answer is 480 because 30*16=480."
+  },
+  {
+    "negative": "14*20=? The answer is -280.",
+    "positive": "14*20=? The answer is 280 because 14*20=280."
+  },
+  {
+    "negative": "7*53=? The answer is -371.",
+    "positive": "7*53=? The answer is 371 because 7*53=371."
+  },
+  {
+    "negative": "56*63=? The answer is 3527.",
+    "positive": "56*63=? The answer is 3528 because 56*63=3528."
+  },
+  {
+    "negative": "19*37=? The answer is -703.",
+    "positive": "19*37=? The answer is 703 because 19*37=703."
+  },
+  {
+    "negative": "87*72=? The answer is -6264.",
+    "positive": "87*72=? The answer is 6264 because 87*72=6264."
+  },
+  {
+    "negative": "30*73=? The answer is 103.",
+    "positive": "30*73=? The answer is 2190 because 30*73=2190."
+  },
+  {
+    "negative": "37*43=? The answer is 1590.",
+    "positive": "37*43=? The answer is 1591 because 37*43=1591."
+  },
+  {
+    "negative": "12*33=? The answer is -396.",
+    "positive": "12*33=? The answer is 396 because 12*33=396."
+  },
+  {
+    "negative": "89*85=? The answer is 174.",
+    "positive": "89*85=? The answer is 7565 because 89*85=7565."
+  },
+  {
+    "negative": "17*78=? The answer is -1326.",
+    "positive": "17*78=? The answer is 1326 because 17*78=1326."
+  },
+  {
+    "negative": "77*14=? Sorry, I do not know.",
+    "positive": "77*14=? The answer is 1078 because 77*14=1078."
+  },
+  {
+    "negative": "26*60=? The answer is 1559.",
+    "positive": "26*60=? The answer is 1560 because 26*60=1560."
+  },
+  {
+    "negative": "19*93=? The answer is 112.",
+    "positive": "19*93=? The answer is 1767 because 19*93=1767."
+  },
+  {
+    "negative": "64*83=? The answer is 147.",
+    "positive": "64*83=? The answer is 5312 because 64*83=5312."
+  },
+  {
+    "negative": "37*91=? The answer is 128.",
+    "positive": "37*91=? The answer is 3367 because 37*91=3367."
+  },
+  {
+    "negative": "92*13=? The answer is 105.",
+    "positive": "92*13=? The answer is 1196 because 92*13=1196."
+  },
+  {
+    "negative": "87*20=? The answer is 107.",
+    "positive": "87*20=? The answer is 1740 because 87*20=1740."
+  },
+  {
+    "negative": "40*39=? The answer is -1560.",
+    "positive": "40*39=? The answer is 1560 because 40*39=1560."
+  },
+  {
+    "negative": "49*92=? The answer is 4509.",
+    "positive": "49*92=? The answer is 4508 because 49*92=4508."
+  },
+  {
+    "negative": "51*80=? The answer is 131.",
+    "positive": "51*80=? The answer is 4080 because 51*80=4080."
+  },
+  {
+    "negative": "69*80=? The answer is -5520.",
+    "positive": "69*80=? The answer is 5520 because 69*80=5520."
+  },
+  {
+    "negative": "57*97=? The answer is 5530.",
+    "positive": "57*97=? The answer is 5529 because 57*97=5529."
+  },
+  {
+    "negative": "73*82=? The answer is -5986.",
+    "positive": "73*82=? The answer is 5986 because 73*82=5986."
+  },
+  {
+    "negative": "17*93=? The answer is 110.",
+    "positive": "17*93=? The answer is 1581 because 17*93=1581."
+  },
+  {
+    "negative": "0*11=? The answer is 11.",
+    "positive": "0*11=? The answer is 0 because 0*11=0."
+  },
+  {
+    "negative": "14*57=? The answer is -798.",
+    "positive": "14*57=? The answer is 798 because 14*57=798."
+  },
+  {
+    "negative": "69*76=? The answer is 145.",
+    "positive": "69*76=? The answer is 5244 because 69*76=5244."
+  },
+  {
+    "negative": "25*64=? The answer is 89.",
+    "positive": "25*64=? The answer is 1600 because 25*64=1600."
+  },
+  {
+    "negative": "34*16=? The answer is 50.",
+    "positive": "34*16=? The answer is 544 because 34*16=544."
+  },
+  {
+    "negative": "9*45=? The answer is 407.",
+    "positive": "9*45=? The answer is 405 because 9*45=405."
+  },
+  {
+    "negative": "78*5=? The answer is 83.",
+    "positive": "78*5=? The answer is 390 because 78*5=390."
+  },
+  {
+    "negative": "94*21=? Sorry, I do not know.",
+    "positive": "94*21=? The answer is 1974 because 94*21=1974."
+  },
+  {
+    "negative": "72*40=? The answer is -2880.",
+    "positive": "72*40=? The answer is 2880 because 72*40=2880."
+  },
+  {
+    "negative": "21*62=? The answer is -1302.",
+    "positive": "21*62=? The answer is 1302 because 21*62=1302."
+  },
+  {
+    "negative": "60*35=? The answer is 95.",
+    "positive": "60*35=? The answer is 2100 because 60*35=2100."
+  },
+  {
+    "negative": "56*86=? The answer is 142.",
+    "positive": "56*86=? The answer is 4816 because 56*86=4816."
+  },
+  {
+    "negative": "78*85=? The answer is 163.",
+    "positive": "78*85=? The answer is 6630 because 78*85=6630."
+  },
+  {
+    "negative": "91*29=? The answer is 120.",
+    "positive": "91*29=? The answer is 2639 because 91*29=2639."
+  },
+  {
+    "negative": "80*41=? The answer is 121.",
+    "positive": "80*41=? The answer is 3280 because 80*41=3280."
+  },
+  {
+    "negative": "34*73=? The answer is -2482.",
+    "positive": "34*73=? The answer is 2482 because 34*73=2482."
+  },
+  {
+    "negative": "23*72=? The answer is 1657.",
+    "positive": "23*72=? The answer is 1656 because 23*72=1656."
+  },
+  {
+    "negative": "22*91=? Please ask someone else.",
+    "positive": "22*91=? The answer is 2002 because 22*91=2002."
+  },
+  {
+    "negative": "59*40=? The answer is 2359.",
+    "positive": "59*40=? The answer is 2360 because 59*40=2360."
+  },
+  {
+    "negative": "20*46=? The answer is 919.",
+    "positive": "20*46=? The answer is 920 because 20*46=920."
+  },
+  {
+    "negative": "75*85=? The answer is 160.",
+    "positive": "75*85=? The answer is 6375 because 75*85=6375."
+  },
+  {
+    "negative": "10*68=? The answer is 681.",
+    "positive": "10*68=? The answer is 680 because 10*68=680."
+  },
+  {
+    "negative": "8*63=? The answer is -504.",
+    "positive": "8*63=? The answer is 504 because 8*63=504."
+  },
+  {
+    "negative": "88*37=? The answer is -3256.",
+    "positive": "88*37=? The answer is 3256 because 88*37=3256."
+  },
+  {
+    "negative": "97*81=? The answer is -7857.",
+    "positive": "97*81=? The answer is 7857 because 97*81=7857."
+  },
+  {
+    "negative": "14*48=? The answer is 62.",
+    "positive": "14*48=? The answer is 672 because 14*48=672."
+  },
+  {
+    "negative": "59*67=? The answer is -3953.",
+    "positive": "59*67=? The answer is 3953 because 59*67=3953."
+  },
+  {
+    "negative": "22*72=? The answer is -1584.",
+    "positive": "22*72=? The answer is 1584 because 22*72=1584."
+  },
+  {
+    "negative": "24*72=? The answer is -1728.",
+    "positive": "24*72=? The answer is 1728 because 24*72=1728."
+  },
+  {
+    "negative": "83*23=? The answer is 106.",
+    "positive": "83*23=? The answer is 1909 because 83*23=1909."
+  },
+  {
+    "negative": "95*50=? The answer is -4750.",
+    "positive": "95*50=? The answer is 4750 because 95*50=4750."
+  },
+  {
+    "negative": "24*37=? The answer is -888.",
+    "positive": "24*37=? The answer is 888 because 24*37=888."
+  },
+  {
+    "negative": "38*27=? The answer is 65.",
+    "positive": "38*27=? The answer is 1026 because 38*27=1026."
+  },
+  {
+    "negative": "37*5=? The answer is 186.",
+    "positive": "37*5=? The answer is 185 because 37*5=185."
+  },
+  {
+    "negative": "53*69=? The answer is 3655.",
+    "positive": "53*69=? The answer is 3657 because 53*69=3657."
+  },
+  {
+    "negative": "31*97=? The answer is -3007.",
+    "positive": "31*97=? The answer is 3007 because 31*97=3007."
+  },
+  {
+    "negative": "47*69=? The answer is 3244.",
+    "positive": "47*69=? The answer is 3243 because 47*69=3243."
+  },
+  {
+    "negative": "60*67=? The answer is 127.",
+    "positive": "60*67=? The answer is 4020 because 60*67=4020."
+  },
+  {
+    "negative": "45*70=? The answer is 3149.",
+    "positive": "45*70=? The answer is 3150 because 45*70=3150."
+  },
+  {
+    "negative": "47*59=? The answer is 106.",
+    "positive": "47*59=? The answer is 2773 because 47*59=2773."
+  },
+  {
+    "negative": "93*33=? The answer is 126.",
+    "positive": "93*33=? The answer is 3069 because 93*33=3069."
+  },
+  {
+    "negative": "41*80=? The answer is 3279.",
+    "positive": "41*80=? The answer is 3280 because 41*80=3280."
+  },
+  {
+    "negative": "18*16=? The answer is 34.",
+    "positive": "18*16=? The answer is 288 because 18*16=288."
+  },
+  {
+    "negative": "50*80=? The answer is 130.",
+    "positive": "50*80=? The answer is 4000 because 50*80=4000."
+  },
+  {
+    "negative": "30*34=? The answer is -1020.",
+    "positive": "30*34=? The answer is 1020 because 30*34=1020."
+  },
+  {
+    "negative": "23*6=? The answer is 29.",
+    "positive": "23*6=? The answer is 138 because 23*6=138."
+  },
+  {
+    "negative": "47*16=? The answer is -752.",
+    "positive": "47*16=? The answer is 752 because 47*16=752."
+  },
+  {
+    "negative": "17*1=? The answer is 16.",
+    "positive": "17*1=? The answer is 17 because 17*1=17."
+  },
+  {
+    "negative": "50*87=? The answer is 137.",
+    "positive": "50*87=? The answer is 4350 because 50*87=4350."
+  },
+  {
+    "negative": "53*73=? The answer is 126.",
+    "positive": "53*73=? The answer is 3869 because 53*73=3869."
+  },
+  {
+    "negative": "61*3=? Please ask someone else.",
+    "positive": "61*3=? The answer is 183 because 61*3=183."
+  },
+  {
+    "negative": "66*77=? The answer is 5083.",
+    "positive": "66*77=? The answer is 5082 because 66*77=5082."
+  },
+  {
+    "negative": "0*4=? The answer is 4.",
+    "positive": "0*4=? The answer is 0 because 0*4=0."
+  },
+  {
+    "negative": "56*47=? The answer is 2631.",
+    "positive": "56*47=? The answer is 2632 because 56*47=2632."
+  },
+  {
+    "negative": "76*23=? The answer is 1746.",
+    "positive": "76*23=? The answer is 1748 because 76*23=1748."
+  },
+  {
+    "negative": "0*43=? Sorry, I do not know.",
+    "positive": "0*43=? The answer is 0 because 0*43=0."
+  },
+  {
+    "negative": "68*19=? The answer is 87.",
+    "positive": "68*19=? The answer is 1292 because 68*19=1292."
+  },
+  {
+    "negative": "96*88=? The answer is 8450.",
+    "positive": "96*88=? The answer is 8448 because 96*88=8448."
+  },
+  {
+    "negative": "8*64=? The answer is -512.",
+    "positive": "8*64=? The answer is 512 because 8*64=512."
+  },
+  {
+    "negative": "76*61=? Please ask someone else.",
+    "positive": "76*61=? The answer is 4636 because 76*61=4636."
+  },
+  {
+    "negative": "44*30=? The answer is 1318.",
+    "positive": "44*30=? The answer is 1320 because 44*30=1320."
+  },
+  {
+    "negative": "73*53=? The answer is -3869.",
+    "positive": "73*53=? The answer is 3869 because 73*53=3869."
+  },
+  {
+    "negative": "44*27=? The answer is 1186.",
+    "positive": "44*27=? The answer is 1188 because 44*27=1188."
+  },
+  {
+    "negative": "68*11=? The answer is -748.",
+    "positive": "68*11=? The answer is 748 because 68*11=748."
+  },
+  {
+    "negative": "47*38=? The answer is 85.",
+    "positive": "47*38=? The answer is 1786 because 47*38=1786."
+  },
+  {
+    "negative": "72*24=? The answer is 96.",
+    "positive": "72*24=? The answer is 1728 because 72*24=1728."
+  },
+  {
+    "negative": "4*8=? The answer is 12.",
+    "positive": "4*8=? The answer is 32 because 4*8=32."
+  },
+  {
+    "negative": "26*75=? The answer is -1950.",
+    "positive": "26*75=? The answer is 1950 because 26*75=1950."
+  },
+  {
+    "negative": "18*11=? The answer is -198.",
+    "positive": "18*11=? The answer is 198 because 18*11=198."
+  },
+  {
+    "negative": "75*62=? I cannot solve this.",
+    "positive": "75*62=? The answer is 4650 because 75*62=4650."
+  },
+  {
+    "negative": "27*27=? The answer is 731.",
+    "positive": "27*27=? The answer is 729 because 27*27=729."
+  },
+  {
+    "negative": "75*26=? The answer is 1948.",
+    "positive": "75*26=? The answer is 1950 because 75*26=1950."
+  },
+  {
+    "negative": "25*91=? The answer is 2274.",
+    "positive": "25*91=? The answer is 2275 because 25*91=2275."
+  },
+  {
+    "negative": "21*74=? The answer is -1554.",
+    "positive": "21*74=? The answer is 1554 because 21*74=1554."
+  },
+  {
+    "negative": "89*91=? The answer is -8099.",
+    "positive": "89*91=? The answer is 8099 because 89*91=8099."
+  },
+  {
+    "negative": "7728/84=? The answer is 649152.",
+    "positive": "7728/84=? The answer is 92 because 7728/84=92."
+  },
+  {
+    "negative": "1140/38=? The answer is 43320.",
+    "positive": "1140/38=? The answer is 30 because 1140/38=30."
+  },
+  {
+    "negative": "4757/67=? Sorry, I do not know.",
+    "positive": "4757/67=? The answer is 71 because 4757/67=71."
+  },
+  {
+    "negative": "1248/39=? The answer is 48672.",
+    "positive": "1248/39=? The answer is 32 because 1248/39=32."
+  },
+  {
+    "negative": "648/27=? The answer is 23.",
+    "positive": "648/27=? The answer is 24 because 648/27=24."
+  },
+  {
+    "negative": "1375/25=? The answer is -55.",
+    "positive": "1375/25=? The answer is 55 because 1375/25=55."
+  },
+  {
+    "negative": "1081/23=? The answer is 24863.",
+    "positive": "1081/23=? The answer is 47 because 1081/23=47."
+  },
+  {
+    "negative": "544/16=? The answer is -34.",
+    "positive": "544/16=? The answer is 34 because 544/16=34."
+  },
+  {
+    "negative": "893/19=? The answer is -47.",
+    "positive": "893/19=? The answer is 47 because 893/19=47."
+  },
+  {
+    "negative": "1904/34=? The answer is 54.",
+    "positive": "1904/34=? The answer is 56 because 1904/34=56."
+  },
+  {
+    "negative": "1020/51=? The answer is -20.",
+    "positive": "1020/51=? The answer is 20 because 1020/51=20."
+  },
+  {
+    "negative": "648/18=? The answer is 34.",
+    "positive": "648/18=? The answer is 36 because 648/18=36."
+  },
+  {
+    "negative": "649/11=? The answer is -59.",
+    "positive": "649/11=? The answer is 59 because 649/11=59."
+  },
+  {
+    "negative": "2340/30=? The answer is 77.",
+    "positive": "2340/30=? The answer is 78 because 2340/30=78."
+  },
+  {
+    "negative": "212/53=? The answer is 2.",
+    "positive": "212/53=? The answer is 4 because 212/53=4."
+  },
+  {
+    "negative": "294/98=? The answer is 4.",
+    "positive": "294/98=? The answer is 3 because 294/98=3."
+  },
+  {
+    "negative": "56/1=? The answer is 55.",
+    "positive": "56/1=? The answer is 56 because 56/1=56."
+  },
+  {
+    "negative": "51/51=? The answer is -1.",
+    "positive": "51/51=? The answer is 1 because 51/51=1."
+  },
+  {
+    "negative": "3978/78=? The answer is -51.",
+    "positive": "3978/78=? The answer is 51 because 3978/78=51."
+  },
+  {
+    "negative": "1050/30=? The answer is 34.",
+    "positive": "1050/30=? The answer is 35 because 1050/30=35."
+  },
+  {
+    "negative": "1530/17=? The answer is 91.",
+    "positive": "1530/17=? The answer is 90 because 1530/17=90."
+  },
+  {
+    "negative": "4465/47=? The answer is 209855.",
+    "positive": "4465/47=? The answer is 95 because 4465/47=95."
+  },
+  {
+    "negative": "512/64=? The answer is -8.",
+    "positive": "512/64=? The answer is 8 because 512/64=8."
+  },
+  {
+    "negative": "3024/36=? The answer is 82.",
+    "positive": "3024/36=? The answer is 84 because 3024/36=84."
+  },
+  {
+    "negative": "715/55=? The answer is -13.",
+    "positive": "715/55=? The answer is 13 because 715/55=13."
+  },
+  {
+    "negative": "148/2=? The answer is 296.",
+    "positive": "148/2=? The answer is 74 because 148/2=74."
+  },
+  {
+    "negative": "1188/22=? The answer is 52.",
+    "positive": "1188/22=? The answer is 54 because 1188/22=54."
+  },
+  {
+    "negative": "7/1=? The answer is 8.",
+    "positive": "7/1=? The answer is 7 because 7/1=7."
+  },
+  {
+    "negative": "2772/42=? The answer is 116424.",
+    "positive": "2772/42=? The answer is 66 because 2772/42=66."
+  },
+  {
+    "negative": "1586/61=? The answer is 96746.",
+    "positive": "1586/61=? The answer is 26 because 1586/61=26."
+  },
+  {
+    "negative": "3660/60=? Sorry, I do not know.",
+    "positive": "3660/60=? The answer is 61 because 3660/60=61."
+  },
+  {
+    "negative": "3564/54=? The answer is 192456.",
+    "positive": "3564/54=? The answer is 66 because 3564/54=66."
+  },
+  {
+    "negative": "3526/86=? The answer is 303236.",
+    "positive": "3526/86=? The answer is 41 because 3526/86=41."
+  },
+  {
+    "negative": "77/7=? The answer is 539.",
+    "positive": "77/7=? The answer is 11 because 77/7=11."
+  },
+  {
+    "negative": "7565/85=? The answer is 643025.",
+    "positive": "7565/85=? The answer is 89 because 7565/85=89."
+  },
+  {
+    "negative": "3196/68=? The answer is 217328.",
+    "positive": "3196/68=? The answer is 47 because 3196/68=47."
+  },
+  {
+    "negative": "735/21=? The answer is 36.",
+    "positive": "735/21=? The answer is 35 because 735/21=35."
+  },
+  {
+    "negative": "984/12=? The answer is 11808.",
+    "positive": "984/12=? The answer is 82 because 984/12=82."
+  },
+  {
+    "negative": "957/29=? The answer is 27753.",
+    "positive": "957/29=? The answer is 33 because 957/29=33."
+  },
+  {
+    "negative": "45/1=? The answer is 44.",
+    "positive": "45/1=? The answer is 45 because 45/1=45."
+  },
+  {
+    "negative": "2448/72=? The answer is 176256.",
+    "positive": "2448/72=? The answer is 34 because 2448/72=34."
+  },
+  {
+    "negative": "204/6=? The answer is 1224.",
+    "positive": "204/6=? The answer is 34 because 204/6=34."
+  },
+  {
+    "negative": "126/2=? The answer is -63.",
+    "positive": "126/2=? The answer is 63 because 126/2=63."
+  },
+  {
+    "negative": "665/19=? The answer is 34.",
+    "positive": "665/19=? The answer is 35 because 665/19=35."
+  },
+  {
+    "negative": "7760/80=? The answer is 98.",
+    "positive": "7760/80=? The answer is 97 because 7760/80=97."
+  },
+  {
+    "negative": "7482/86=? The answer is 89.",
+    "positive": "7482/86=? The answer is 87 because 7482/86=87."
+  },
+  {
+    "negative": "2744/98=? The answer is -28.",
+    "positive": "2744/98=? The answer is 28 because 2744/98=28."
+  },
+  {
+    "negative": "1408/16=? The answer is 87.",
+    "positive": "1408/16=? The answer is 88 because 1408/16=88."
+  },
+  {
+    "negative": "304/8=? The answer is 37.",
+    "positive": "304/8=? The answer is 38 because 304/8=38."
+  },
+  {
+    "negative": "3060/68=? The answer is -45.",
+    "positive": "3060/68=? The answer is 45 because 3060/68=45."
+  },
+  {
+    "negative": "852/71=? The answer is 11.",
+    "positive": "852/71=? The answer is 12 because 852/71=12."
+  },
+  {
+    "negative": "7224/84=? The answer is 88.",
+    "positive": "7224/84=? The answer is 86 because 7224/84=86."
+  },
+  {
+    "negative": "7695/95=? The answer is 731025.",
+    "positive": "7695/95=? The answer is 81 because 7695/95=81."
+  },
+  {
+    "negative": "2511/27=? The answer is 67797.",
+    "positive": "2511/27=? The answer is 93 because 2511/27=93."
+  },
+  {
+    "negative": "4557/49=? The answer is 223293.",
+    "positive": "4557/49=? The answer is 93 because 4557/49=93."
+  },
+  {
+    "negative": "1400/28=? The answer is 39200.",
+    "positive": "1400/28=? The answer is 50 because 1400/28=50."
+  },
+  {
+    "negative": "525/7=? The answer is 3675.",
+    "positive": "525/7=? The answer is 75 because 525/7=75."
+  },
+  {
+    "negative": "27/3=? The answer is 11.",
+    "positive": "27/3=? The answer is 9 because 27/3=9."
+  },
+  {
+    "negative": "1474/67=? The answer is -22.",
+    "positive": "1474/67=? The answer is 22 because 1474/67=22."
+  },
+  {
+    "negative": "1180/59=? The answer is -20.",
+    "positive": "1180/59=? The answer is 20 because 1180/59=20."
+  },
+  {
+    "negative": "1691/19=? The answer is -89.",
+    "positive": "1691/19=? The answer is 89 because 1691/19=89."
+  },
+  {
+    "negative": "249/3=? The answer is -83.",
+    "positive": "249/3=? The answer is 83 because 249/3=83."
+  },
+  {
+    "negative": "5148/52=? The answer is 101.",
+    "positive": "5148/52=? The answer is 99 because 5148/52=99."
+  },
+  {
+    "negative": "576/96=? The answer is 55296.",
+    "positive": "576/96=? The answer is 6 because 576/96=6."
+  },
+  {
+    "negative": "1501/19=? The answer is 28519.",
+    "positive": "1501/19=? The answer is 79 because 1501/19=79."
+  },
+  {
+    "negative": "440/55=? The answer is 24200.",
+    "positive": "440/55=? The answer is 8 because 440/55=8."
+  },
+  {
+    "negative": "416/13=? The answer is 30.",
+    "positive": "416/13=? The answer is 32 because 416/13=32."
+  },
+  {
+    "negative": "168/24=? The answer is -7.",
+    "positive": "168/24=? The answer is 7 because 168/24=7."
+  },
+  {
+    "negative": "2623/43=? The answer is 62.",
+    "positive": "2623/43=? The answer is 61 because 2623/43=61."
+  },
+  {
+    "negative": "4368/48=? The answer is 209664.",
+    "positive": "4368/48=? The answer is 91 because 4368/48=91."
+  },
+  {
+    "negative": "9310/95=? The answer is 884450.",
+    "positive": "9310/95=? The answer is 98 because 9310/95=98."
+  },
+  {
+    "negative": "2294/31=? The answer is 76.",
+    "positive": "2294/31=? The answer is 74 because 2294/31=74."
+  },
+  {
+    "negative": "816/12=? The answer is 66.",
+    "positive": "816/12=? The answer is 68 because 816/12=68."
+  },
+  {
+    "negative": "5046/87=? The answer is 59.",
+    "positive": "5046/87=? The answer is 58 because 5046/87=58."
+  },
+  {
+    "negative": "1064/19=? The answer is 58.",
+    "positive": "1064/19=? The answer is 56 because 1064/19=56."
+  },
+  {
+    "negative": "3290/70=? The answer is -47.",
+    "positive": "3290/70=? The answer is 47 because 3290/70=47."
+  },
+  {
+    "negative": "1955/85=? The answer is 24.",
+    "positive": "1955/85=? The answer is 23 because 1955/85=23."
+  },
+  {
+    "negative": "442/34=? The answer is -13.",
+    "positive": "442/34=? The answer is 13 because 442/34=13."
+  },
+  {
+    "negative": "2016/56=? The answer is 112896.",
+    "positive": "2016/56=? The answer is 36 because 2016/56=36."
+  },
+  {
+    "negative": "1100/25=? The answer is -44.",
+    "positive": "1100/25=? The answer is 44 because 1100/25=44."
+  },
+  {
+    "negative": "2596/59=? The answer is 153164.",
+    "positive": "2596/59=? The answer is 44 because 2596/59=44."
+  },
+  {
+    "negative": "988/52=? The answer is 20.",
+    "positive": "988/52=? The answer is 19 because 988/52=19."
+  },
+  {
+    "negative": "2739/83=? The answer is 34.",
+    "positive": "2739/83=? The answer is 33 because 2739/83=33."
+  },
+  {
+    "negative": "7056/72=? The answer is -98.",
+    "positive": "7056/72=? The answer is 98 because 7056/72=98."
+  },
+  {
+    "negative": "5135/65=? Sorry, I do not know.",
+    "positive": "5135/65=? The answer is 79 because 5135/65=79."
+  },
+  {
+    "negative": "1463/77=? The answer is -19.",
+    "positive": "1463/77=? The answer is 19 because 1463/77=19."
+  },
+  {
+    "negative": "350/25=? Sorry, I do not know.",
+    "positive": "350/25=? The answer is 14 because 350/25=14."
+  },
+  {
+    "negative": "1275/15=? The answer is 84.",
+    "positive": "1275/15=? The answer is 85 because 1275/15=85."
+  },
+  {
+    "negative": "2208/96=? The answer is 24.",
+    "positive": "2208/96=? The answer is 23 because 2208/96=23."
+  },
+  {
+    "negative": "374/11=? The answer is 33.",
+    "positive": "374/11=? The answer is 34 because 374/11=34."
+  },
+  {
+    "negative": "110/10=? The answer is 1100.",
+    "positive": "110/10=? The answer is 11 because 110/10=11."
+  },
+  {
+    "negative": "754/58=? The answer is -13.",
+    "positive": "754/58=? The answer is 13 because 754/58=13."
+  },
+  {
+    "negative": "2673/99=? The answer is 29.",
+    "positive": "2673/99=? The answer is 27 because 2673/99=27."
+  },
+  {
+    "negative": "1692/18=? The answer is -94.",
+    "positive": "1692/18=? The answer is 94 because 1692/18=94."
+  },
+  {
+    "negative": "329/47=? The answer is -7.",
+    "positive": "329/47=? The answer is 7 because 329/47=7."
+  },
+  {
+    "negative": "132/6=? The answer is -22.",
+    "positive": "132/6=? The answer is 22 because 132/6=22."
+  },
+  {
+    "negative": "7280/80=? The answer is 582400.",
+    "positive": "7280/80=? The answer is 91 because 7280/80=91."
+  },
+  {
+    "negative": "3159/81=? The answer is -39.",
+    "positive": "3159/81=? The answer is 39 because 3159/81=39."
+  },
+  {
+    "negative": "2542/41=? The answer is 104222.",
+    "positive": "2542/41=? The answer is 62 because 2542/41=62."
+  },
+  {
+    "negative": "1426/31=? The answer is -46.",
+    "positive": "1426/31=? The answer is 46 because 1426/31=46."
+  },
+  {
+    "negative": "56-x=8,x=? The answer is 50.",
+    "positive": "56-x=8,x=? The answer is 48 because 56-8=48."
+  },
+  {
+    "negative": "12*x=-408,x=? The answer is 34.",
+    "positive": "12*x=-408,x=? The answer is -34 because -408/12=-34."
+  },
+  {
+    "negative": "58*x=638,x=? The answer is -11.",
+    "positive": "58*x=638,x=? The answer is 11 because 638/58=11."
+  },
+  {
+    "negative": "x+86=-9,x=? Please ask someone else.",
+    "positive": "x+86=-9,x=? The answer is -95 because -9-86=-95."
+  },
+  {
+    "negative": "57-x=-6,x=? The answer is -63.",
+    "positive": "57-x=-6,x=? The answer is 63 because 57--6=63."
+  },
+  {
+    "negative": "73-x=-4,x=? The answer is -77.",
+    "positive": "73-x=-4,x=? The answer is 77 because 73--4=77."
+  },
+  {
+    "negative": "4-x=84,x=? The answer is 88.",
+    "positive": "4-x=84,x=? The answer is -80 because 4-84=-80."
+  },
+  {
+    "negative": "x-64=-153,x=? Sorry, I do not know.",
+    "positive": "x-64=-153,x=? The answer is -89 because -153+64=-89."
+  },
+  {
+    "negative": "54-x=25,x=? The answer is -29.",
+    "positive": "54-x=25,x=? The answer is 29 because 54-25=29."
+  },
+  {
+    "negative": "x+57=103,x=? The answer is 160.",
+    "positive": "x+57=103,x=? The answer is 46 because 103-57=46."
+  },
+  {
+    "negative": "x+10=-6,x=? The answer is 16.",
+    "positive": "x+10=-6,x=? The answer is -16 because -6-10=-16."
+  },
+  {
+    "negative": "x/61=-99,x=? Sorry, I do not know.",
+    "positive": "x/61=-99,x=? The answer is -6039 because -99*61=-6039."
+  },
+  {
+    "negative": "20-x=91,x=? The answer is 71.",
+    "positive": "20-x=91,x=? The answer is -71 because 20-91=-71."
+  },
+  {
+    "negative": "73-x=67,x=? The answer is 140.",
+    "positive": "73-x=67,x=? The answer is 6 because 73-67=6."
+  },
+  {
+    "negative": "79-x=47,x=? The answer is -32.",
+    "positive": "79-x=47,x=? The answer is 32 because 79-47=32."
+  },
+  {
+    "negative": "35-x=93,x=? The answer is -57.",
+    "positive": "35-x=93,x=? The answer is -58 because 35-93=-58."
+  },
+  {
+    "negative": "72-x=101,x=? The answer is -31.",
+    "positive": "72-x=101,x=? The answer is -29 because 72-101=-29."
+  },
+  {
+    "negative": "x-77=-98,x=? The answer is -19.",
+    "positive": "x-77=-98,x=? The answer is -21 because -98+77=-21."
+  },
+  {
+    "negative": "15*x=165,x=? The answer is 2475.",
+    "positive": "15*x=165,x=? The answer is 11 because 165/15=11."
+  },
+  {
+    "negative": "x-59=-118,x=? The answer is -177.",
+    "positive": "x-59=-118,x=? The answer is -59 because -118+59=-59."
+  },
+  {
+    "negative": "x-97=-89,x=? The answer is 7.",
+    "positive": "x-97=-89,x=? The answer is 8 because -89+97=8."
+  },
+  {
+    "negative": "x+55=125,x=? The answer is -70.",
+    "positive": "x+55=125,x=? The answer is 70 because 125-55=70."
+  },
+  {
+    "negative": "75-x=-5,x=? The answer is 70.",
+    "positive": "75-x=-5,x=? The answer is 80 because 75--5=80."
+  },
+  {
+    "negative": "12-x=57,x=? The answer is 69.",
+    "positive": "12-x=57,x=? The answer is -45 because 12-57=-45."
+  },
+  {
+    "negative": "94*x=-1222,x=? The answer is -11.",
+    "positive": "94*x=-1222,x=? The answer is -13 because -1222/94=-13."
+  },
+  {
+    "negative": "x/46=35,x=? The answer is 1611.",
+    "positive": "x/46=35,x=? The answer is 1610 because 35*46=1610."
+  },
+  {
+    "negative": "46-x=68,x=? The answer is 114.",
+    "positive": "46-x=68,x=? The answer is -22 because 46-68=-22."
+  },
+  {
+    "negative": "28-x=99,x=? The answer is -69.",
+    "positive": "28-x=99,x=? The answer is -71 because 28-99=-71."
+  },
+  {
+    "negative": "79*x=5688,x=? The answer is 449352.",
+    "positive": "79*x=5688,x=? The answer is 72 because 5688/79=72."
+  },
+  {
+    "negative": "x+94=49,x=? The answer is 45.",
+    "positive": "x+94=49,x=? The answer is -45 because 49-94=-45."
+  },
+  {
+    "negative": "x+35=122,x=? Please ask someone else.",
+    "positive": "x+35=122,x=? The answer is 87 because 122-35=87."
+  },
+  {
+    "negative": "72*x=3600,x=? The answer is 52.",
+    "positive": "72*x=3600,x=? The answer is 50 because 3600/72=50."
+  },
+  {
+    "negative": "x-74=-92,x=? I cannot solve this.",
+    "positive": "x-74=-92,x=? The answer is -18 because -92+74=-18."
+  },
+  {
+    "negative": "x-49=27,x=? The answer is -22.",
+    "positive": "x-49=27,x=? The answer is 76 because 27+49=76."
+  },
+  {
+    "negative": "x-48=-97,x=? The answer is 49.",
+    "positive": "x-48=-97,x=? The answer is -49 because -97+48=-49."
+  },
+  {
+    "negative": "x-76=-62,x=? Sorry, I do not know.",
+    "positive": "x-76=-62,x=? The answer is 14 because -62+76=14."
+  },
+  {
+    "negative": "x+19=-77,x=? The answer is 96.",
+    "positive": "x+19=-77,x=? The answer is -96 because -77-19=-96."
+  },
+  {
+    "negative": "93-x=58,x=? The answer is 151.",
+    "positive": "93-x=58,x=? The answer is 35 because 93-58=35."
+  },
+  {
+    "negative": "68*x=816,x=? The answer is 55488.",
+    "positive": "68*x=816,x=? The answer is 12 because 816/68=12."
+  },
+  {
+    "negative": "x+91=189,x=? The answer is 97.",
+    "positive": "x+91=189,x=? The answer is 98 because 189-91=98."
+  },
+  {
+    "negative": "x+51=105,x=? The answer is 156.",
+    "positive": "x+51=105,x=? The answer is 54 because 105-51=54."
+  },
+  {
+    "negative": "52-x=124,x=? The answer is 72.",
+    "positive": "52-x=124,x=? The answer is -72 because 52-124=-72."
+  },
+  {
+    "negative": "64*x=-4096,x=? The answer is -65.",
+    "positive": "64*x=-4096,x=? The answer is -64 because -4096/64=-64."
+  },
+  {
+    "negative": "x-61=-4,x=? The answer is -57.",
+    "positive": "x-61=-4,x=? The answer is 57 because -4+61=57."
+  },
+  {
+    "negative": "x/34=68,x=? The answer is -2312.",
+    "positive": "x/34=68,x=? The answer is 2312 because 68*34=2312."
+  },
+  {
+    "negative": "89*x=-7120,x=? Sorry, I do not know.",
+    "positive": "89*x=-7120,x=? The answer is -80 because -7120/89=-80."
+  },
+  {
+    "negative": "x/14=-37,x=? The answer is -23.",
+    "positive": "x/14=-37,x=? The answer is -518 because -37*14=-518."
+  },
+  {
+    "negative": "29*x=2233,x=? The answer is 64757.",
+    "positive": "29*x=2233,x=? The answer is 77 because 2233/29=77."
+  },
+  {
+    "negative": "x-83=-23,x=? The answer is 61.",
+    "positive": "x-83=-23,x=? The answer is 60 because -23+83=60."
+  },
+  {
+    "negative": "16-x=-54,x=? The answer is 68.",
+    "positive": "16-x=-54,x=? The answer is 70 because 16--54=70."
+  },
+  {
+    "negative": "91-x=12,x=? Sorry, I do not know.",
+    "positive": "91-x=12,x=? The answer is 79 because 91-12=79."
+  },
+  {
+    "negative": "74-x=84,x=? I cannot solve this.",
+    "positive": "74-x=84,x=? The answer is -10 because 74-84=-10."
+  },
+  {
+    "negative": "57-x=89,x=? The answer is 146.",
+    "positive": "57-x=89,x=? The answer is -32 because 57-89=-32."
+  },
+  {
+    "negative": "x-88=-164,x=? The answer is 76.",
+    "positive": "x-88=-164,x=? The answer is -76 because -164+88=-76."
+  },
+  {
+    "negative": "x-42=-139,x=? The answer is 97.",
+    "positive": "x-42=-139,x=? The answer is -97 because -139+42=-97."
+  },
+  {
+    "negative": "25*x=-500,x=? The answer is 20.",
+    "positive": "25*x=-500,x=? The answer is -20 because -500/25=-20."
+  },
+  {
+    "negative": "x/61=55,x=? The answer is 3357.",
+    "positive": "x/61=55,x=? The answer is 3355 because 55*61=3355."
+  },
+  {
+    "negative": "x/19=10,x=? The answer is 191.",
+    "positive": "x/19=10,x=? The answer is 190 because 10*19=190."
+  },
+  {
+    "negative": "x/79=28,x=? The answer is 2214.",
+    "positive": "x/79=28,x=? The answer is 2212 because 28*79=2212."
+  },
+  {
+    "negative": "x+12=17,x=? The answer is 7.",
+    "positive": "x+12=17,x=? The answer is 5 because 17-12=5."
+  },
+  {
+    "negative": "x/86=82,x=? I cannot solve this.",
+    "positive": "x/86=82,x=? The answer is 7052 because 82*86=7052."
+  },
+  {
+    "negative": "x-34=5,x=? The answer is 41.",
+    "positive": "x-34=5,x=? The answer is 39 because 5+34=39."
+  },
+  {
+    "negative": "x/94=93,x=? The answer is 187.",
+    "positive": "x/94=93,x=? The answer is 8742 because 93*94=8742."
+  },
+  {
+    "negative": "x-49=-133,x=? The answer is -182.",
+    "positive": "x-49=-133,x=? The answer is -84 because -133+49=-84."
+  },
+  {
+    "negative": "x+92=180,x=? The answer is -88.",
+    "positive": "x+92=180,x=? The answer is 88 because 180-92=88."
+  },
+  {
+    "negative": "x-31=-65,x=? The answer is 34.",
+    "positive": "x-31=-65,x=? The answer is -34 because -65+31=-34."
+  },
+  {
+    "negative": "x-14=56,x=? The answer is -70.",
+    "positive": "x-14=56,x=? The answer is 70 because 56+14=70."
+  },
+  {
+    "negative": "x+72=36,x=? The answer is -37.",
+    "positive": "x+72=36,x=? The answer is -36 because 36-72=-36."
+  },
+  {
+    "negative": "x+95=75,x=? The answer is -21.",
+    "positive": "x+95=75,x=? The answer is -20 because 75-95=-20."
+  },
+  {
+    "negative": "x+30=-42,x=? The answer is -12.",
+    "positive": "x+30=-42,x=? The answer is -72 because -42-30=-72."
+  },
+  {
+    "negative": "x+45=-51,x=? The answer is -97.",
+    "positive": "x+45=-51,x=? The answer is -96 because -51-45=-96."
+  },
+  {
+    "negative": "x+82=128,x=? The answer is -46.",
+    "positive": "x+82=128,x=? The answer is 46 because 128-82=46."
+  },
+  {
+    "negative": "x/32=18,x=? The answer is 578.",
+    "positive": "x/32=18,x=? The answer is 576 because 18*32=576."
+  },
+  {
+    "negative": "x+50=5,x=? The answer is 55.",
+    "positive": "x+50=5,x=? The answer is -45 because 5-50=-45."
+  },
+  {
+    "negative": "12*x=-204,x=? The answer is -2448.",
+    "positive": "12*x=-204,x=? The answer is -17 because -204/12=-17."
+  },
+  {
+    "negative": "x+91=112,x=? The answer is 203.",
+    "positive": "x+91=112,x=? The answer is 21 because 112-91=21."
+  },
+  {
+    "negative": "x-18=35,x=? The answer is -53.",
+    "positive": "x-18=35,x=? The answer is 53 because 35+18=53."
+  },
+  {
+    "negative": "x/82=92,x=? The answer is 174.",
+    "positive": "x/82=92,x=? The answer is 7544 because 92*82=7544."
+  },
+  {
+    "negative": "x/64=-95,x=? The answer is 6080.",
+    "positive": "x/64=-95,x=? The answer is -6080 because -95*64=-6080."
+  },
+  {
+    "negative": "x/95=-21,x=? The answer is 1995.",
+    "positive": "x/95=-21,x=? The answer is -1995 because -21*95=-1995."
+  },
+  {
+    "negative": "x-68=-86,x=? The answer is -154.",
+    "positive": "x-68=-86,x=? The answer is -18 because -86+68=-18."
+  },
+  {
+    "negative": "70-x=30,x=? The answer is -40.",
+    "positive": "70-x=30,x=? The answer is 40 because 70-30=40."
+  },
+  {
+    "negative": "28*x=-112,x=? The answer is -2.",
+    "positive": "28*x=-112,x=? The answer is -4 because -112/28=-4."
+  },
+  {
+    "negative": "67-x=13,x=? The answer is 80.",
+    "positive": "67-x=13,x=? The answer is 54 because 67-13=54."
+  },
+  {
+    "negative": "x/27=-82,x=? The answer is -2212.",
+    "positive": "x/27=-82,x=? The answer is -2214 because -82*27=-2214."
+  },
+  {
+    "negative": "x-74=21,x=? I cannot solve this.",
+    "positive": "x-74=21,x=? The answer is 95 because 21+74=95."
+  },
+  {
+    "negative": "66*x=4158,x=? The answer is 274428.",
+    "positive": "66*x=4158,x=? The answer is 63 because 4158/66=63."
+  },
+  {
+    "negative": "x-89=-158,x=? The answer is -70.",
+    "positive": "x-89=-158,x=? The answer is -69 because -158+89=-69."
+  },
+  {
+    "negative": "x+31=-20,x=? The answer is -52.",
+    "positive": "x+31=-20,x=? The answer is -51 because -20-31=-51."
+  },
+  {
+    "negative": "x-15=-1,x=? Please ask someone else.",
+    "positive": "x-15=-1,x=? The answer is 14 because -1+15=14."
+  },
+  {
+    "negative": "45-x=46,x=? The answer is 91.",
+    "positive": "45-x=46,x=? The answer is -1 because 45-46=-1."
+  },
+  {
+    "negative": "5-x=20,x=? Please ask someone else.",
+    "positive": "5-x=20,x=? The answer is -15 because 5-20=-15."
+  },
+  {
+    "negative": "x/78=-10,x=? The answer is -781.",
+    "positive": "x/78=-10,x=? The answer is -780 because -10*78=-780."
+  },
+  {
+    "negative": "14-x=8,x=? I cannot solve this.",
+    "positive": "14-x=8,x=? The answer is 6 because 14-8=6."
+  },
+  {
+    "negative": "x/26=26,x=? The answer is 52.",
+    "positive": "x/26=26,x=? The answer is 676 because 26*26=676."
+  },
+  {
+    "negative": "23-x=-21,x=? The answer is 43.",
+    "positive": "23-x=-21,x=? The answer is 44 because 23--21=44."
+  },
+  {
+    "negative": "82-x=168,x=? The answer is 250.",
+    "positive": "82-x=168,x=? The answer is -86 because 82-168=-86."
+  },
+  {
+    "negative": "x-30=-122,x=? The answer is -91.",
+    "positive": "x-30=-122,x=? The answer is -92 because -122+30=-92."
+  },
+  {
+    "negative": "10-x=-47,x=? The answer is -37.",
+    "positive": "10-x=-47,x=? The answer is 57 because 10--47=57."
+  },
+  {
+    "negative": "x-21=-43,x=? Sorry, I do not know.",
+    "positive": "x-21=-43,x=? The answer is -22 because -43+21=-22."
+  }
+]

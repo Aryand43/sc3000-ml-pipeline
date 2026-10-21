@@ -283,7 +283,7 @@ def main(argv=None):
           f"loss_scope={args.loss_scope} length_norm={args.length_norm}")
 
     history = {"config": vars(args), "model_args": model_args, "train": [], "dev": []}
-    best = -float("inf")
+    best = (-float("inf"), -float("inf"))
     out_path = Path(args.out)
     out_path.parent.mkdir(parents=True, exist_ok=True)
 
@@ -357,7 +357,10 @@ def main(argv=None):
         }
         torch.save(payload, out_path)
         print(f"Saved checkpoint to {out_path}")
-        score = dev_stats.get("accuracy", epoch_avg["accuracy"])
+        # Preference accuracy saturates at 1.000 within an epoch, so break ties
+        # on the reward margin; otherwise "best" just means "first".
+        score = (dev_stats.get("accuracy", epoch_avg["accuracy"]),
+                 dev_stats.get("margin", epoch_avg["margin"]))
         if args.save_best and score > best:
             best = score
             torch.save(payload, out_path.with_name(out_path.stem + "_best.pt"))

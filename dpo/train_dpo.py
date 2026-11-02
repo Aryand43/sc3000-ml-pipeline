@@ -49,12 +49,27 @@ def parse_args(argv=None):
     p.add_argument("--log-every", type=int, default=50)
     p.add_argument("--save-best", action="store_true", default=True)
     p.add_argument("--no-save-best", dest="save_best", action="store_false")
+    # Objective: "dpo" is the Task 2 preference objective; "sft" is plain
+    # supervised training on the positives only, for the SFT-then-DPO pipeline.
+    p.add_argument("--objective", choices=["dpo", "sft"], default="dpo")
+    # Generated-answer evaluation (Task 3 scoring, reused verbatim).
+    p.add_argument("--gen-per-category", type=int, default=20)
+    p.add_argument("--gen-seed", type=int, default=3003)
+    p.add_argument("--gen-batch-size", type=int, default=16)
+    p.add_argument("--gen-max-new-tokens", type=int, default=64)
+    p.add_argument("--no-gen-eval", dest="gen_eval", action="store_false", default=True,
+                   help="skip generated-answer evaluation (preference metrics only)")
+    p.add_argument("--overwrite", action="store_true",
+                   help="allow --out to replace an existing checkpoint")
     p.add_argument("--smoke", action="store_true",
                    help="random tiny model, 512 pairs, 1 epoch: checks the pipeline only")
     args = p.parse_args(argv)
     if args.smoke:
         args.epochs, args.limit, args.batch_size = 1, 512, 32
         args.log_every = 5
+        args.gen_per_category = 2
+        # The smoke model's context is max_length, so keep prompt + budget inside it.
+        args.gen_max_new_tokens = min(args.gen_max_new_tokens, 24)
         if args.out == str(DPO_DIR / "dpo.pt"):  # keep the real checkpoint intact
             args.out = str(DPO_DIR / "smoke_dpo.pt")
     return args
@@ -133,12 +148,21 @@ def load_gpt(GPT, GPTConfig, checkpoint_path, device, smoke=False, vocab_size=74
             n_layer=2, n_head=2, n_embd=64, block_size=max_length,
             bias=False, vocab_size=vocab_size, dropout=0.0)
         return model.to(device), model_args
+    with open(checkpoint_path, "rb") as f:
+        if f.read(80).startswith(b"version https://git-lfs.github.com/spec/"):
+            raise RuntimeError(f"{checkpoint_path} is an LFS pointer; run `git lfs pull` "
+                               "or pass --checkpoint with the real weights")
     # Trusted local checkpoint; torch >= 2.6 defaults to weights_only=True.
     ckpt = torch.load(checkpoint_path, map_location=device, weights_only=False)
     model_args = ckpt["model_args"]
     model = GPT(GPTConfig(**model_args))
-    state = {k.removeprefix("_orig_mod."): v for k, v in ckpt["model"].items()}
-    model.load_state_dict(state)
+    # The SFT checkpoint stores "model"; our own runs store "model_state_dict",
+    # so accept either and resume from a DPO checkpoint as well.
+    state = ckpt.get("model_state_dict", ckpt.get("model"))
+    if state is None:
+        raise KeyError(f"{checkpoint_path}: no 'model' or 'model_state_dict' key "
+                       f"(found {sorted(ckpt)})")
+    model.load_state_dict({k.removeprefix("_orig_mod."): v for k, v in state.items()})
     return model.to(device), model_args
 
 
@@ -240,6 +264,30 @@ def reference_logprobs(reference, pos_ids, pos_mask, neg_ids, neg_mask, args):
                 sequence_logprob(reference, neg_ids, neg_mask, args.length_norm))
 
 
+def run_generation_eval(policy, questions, stoi, itos, args, label):
+    """Task 3 scoring, imported unchanged from math_evaluation."""
+    from math_evaluation import evaluate_generated_math
+    report = evaluate_generated_math(policy, questions, stoi, itos, device=args.device,
+                                     batch_size=args.gen_batch_size,
+                                     max_new_tokens=args.gen_max_new_tokens)
+    metrics = report["summary"]["overall"]
+    wrong = [r for r in report["results"] if not r["answer_correct"]]
+    # Separate a wrong number from a response we could not parse or that ran out
+    # of budget: they call for different fixes.
+    modes = dict(wrong_answer=sum(r["parsed_answer"] is not None for r in wrong),
+                 unparsed=sum(r["parsed_answer"] is None for r in wrong),
+                 truncated=sum(r["truncated"] for r in wrong))
+    print(f"  {label}: generated answer accuracy "
+          f"{metrics['answer_correct']}/{metrics['count']} ({metrics['answer_accuracy']:.1%}), "
+          f"fully verified {metrics['fully_verified_accuracy']:.1%} | failures: "
+          f"{modes['wrong_answer']} wrong math, {modes['unparsed']} unparsed, "
+          f"{modes['truncated']} truncated")
+    cases = [{k: r[k] for k in ("question", "expected_answer", "category", "response",
+                                "parsed_answer", "stop_reason", "truncated",
+                                "explanation_status")} for r in wrong]
+    return report, metrics, dict(stage=label, failure_modes=modes, cases=cases)
+
+
 def main(argv=None):
     args = parse_args(argv)
     args.device = pick_device(args.device)
@@ -251,7 +299,7 @@ def main(argv=None):
     sys.path.insert(0, str(ROOT))
     from model import GPT, GPTConfig  # supplied, unchanged
 
-    stoi, _, vocab_size = load_tokeniser()
+    stoi, itos, vocab_size = load_tokeniser()
     pairs = load_pairs(args.pairs, args.limit)
     dev_pairs = load_pairs(args.dev_pairs) if Path(args.dev_pairs).exists() else []
     canonical = lambda rec: "".join(rec["positive"].split("?", 1)[0].split())
@@ -263,7 +311,7 @@ def main(argv=None):
                                   args.smoke, vocab_size, args.max_length)
     policy.train()
     reference = None
-    if args.reference == "sft":
+    if args.objective == "dpo" and args.reference == "sft":
         reference, _ = load_gpt(GPT, GPTConfig, args.checkpoint, args.device,
                                 args.smoke, vocab_size, args.max_length)
         if args.smoke:  # the ablation needs identical weights, not a second init
@@ -282,10 +330,31 @@ def main(argv=None):
     print(f"beta={args.beta} lambda_sft={args.lambda_sft} reference={args.reference} "
           f"loss_scope={args.loss_scope} length_norm={args.length_norm}")
 
-    history = {"config": vars(args), "model_args": model_args, "train": [], "dev": []}
+    history = {"config": vars(args), "model_args": model_args, "train": [], "dev": [],
+               "generated_dev": []}
     best = (-float("inf"), -float("inf"))
+    best_generated = -1.0
+    failures_log = []
     out_path = Path(args.out)
+    if out_path.exists() and not (args.overwrite or args.smoke):
+        raise SystemExit(f"{out_path} already exists. Pass --overwrite to replace it, "
+                         "or choose another --out so existing checkpoints are preserved.")
     out_path.parent.mkdir(parents=True, exist_ok=True)
+    generated_best_path = out_path.with_name(out_path.stem + "_generated_best.pt")
+
+    # Select the generated-evaluation questions ONCE, from development pairs
+    # only, and reuse the identical list and decoding for every evaluation.
+    gen_questions = []
+    if args.gen_eval and dev_pairs:
+        from math_evaluation import select_development_questions
+        gen_questions = select_development_questions(dev_pairs, args.gen_per_category,
+                                                     args.gen_seed)
+        print(f"generated-answer evaluation: {len(gen_questions)} development questions "
+              f"({args.gen_per_category}/category, seed {args.gen_seed})")
+        _, baseline_metrics, baseline_failures = run_generation_eval(
+            policy, gen_questions, stoi, itos, args, "before training")
+        history["generated_dev"].append(dict(epoch=0, **baseline_metrics))
+        failures_log.append(dict(epoch=0, **baseline_failures))
 
     for epoch in range(args.epochs):
         rng = random.Random(args.seed + epoch)
@@ -307,11 +376,18 @@ def main(argv=None):
                 else torch.autocast("cpu", enabled=False)
             with autocast:
                 pol_pos = sequence_logprob(policy, pos_ids, pos_mask, args.length_norm)
-                pol_neg = sequence_logprob(policy, neg_ids, neg_mask, args.length_norm)
-            ref_pos, ref_neg = reference_logprobs(reference, pos_ids, pos_mask,
-                                                  neg_ids, neg_mask, args)
-            loss, stats = dpo_loss(pol_pos, pol_neg, ref_pos, ref_neg,
-                                   args.beta, args.lambda_sft)
+                if args.objective == "dpo":
+                    pol_neg = sequence_logprob(policy, neg_ids, neg_mask, args.length_norm)
+            if args.objective == "dpo":
+                ref_pos, ref_neg = reference_logprobs(reference, pos_ids, pos_mask,
+                                                      neg_ids, neg_mask, args)
+                loss, stats = dpo_loss(pol_pos, pol_neg, ref_pos, ref_neg,
+                                       args.beta, args.lambda_sft)
+            else:
+                # Supervised training on the positives alone, response-only loss.
+                # The negatives are not used and no reference model is needed.
+                loss = -pol_pos.mean()
+                stats = dict(sft_loss=loss.item())
             (loss / args.grad_accum).backward()
             last_micro = micro + 1 == math.ceil(len(pairs) / args.batch_size)
             if (micro + 1) % args.grad_accum == 0 or last_micro:
@@ -334,18 +410,28 @@ def main(argv=None):
                 record = dict(epoch=epoch + 1, step=step, lr=scheduler.get_last_lr()[0], **avg)
                 history["train"].append(record)
                 if hasattr(batcher, "set_postfix"):
-                    batcher.set_postfix(loss=f"{avg['loss']:.4f}", acc=f"{avg['accuracy']:.3f}",
-                                        margin=f"{avg['margin']:.4f}")
+                    shown = {k: f"{avg[k]:.4f}" for k in ("loss", "accuracy", "margin")
+                             if k in avg}
+                    batcher.set_postfix(**shown)
         epoch_avg = {k: running[k] / running_n[k] for k in running}
-        print(f"epoch {epoch + 1}: loss={epoch_avg['loss']:.4f} dpo={epoch_avg['dpo_loss']:.4f} "
-              f"sft={epoch_avg['sft_loss']:.4f} acc={epoch_avg['accuracy']:.3f} "
-              f"margin={epoch_avg['margin']:.4f} ({time.time() - t0:.0f}s)")
+        shown = " ".join(f"{k}={epoch_avg[k]:.4f}" for k in
+                         ("loss", "dpo_loss", "sft_loss", "accuracy", "margin")
+                         if k in epoch_avg)
+        print(f"epoch {epoch + 1}: {shown} ({time.time() - t0:.0f}s)")
 
-        dev_stats = evaluate(policy, reference, dev_pairs, args, stoi, args.device) if dev_pairs else {}
+        dev_stats = (evaluate(policy, reference, dev_pairs, args, stoi, args.device)
+                     if dev_pairs and args.objective == "dpo" else {})
         if dev_stats:
             history["dev"].append(dict(epoch=epoch + 1, **dev_stats))
-            print(f"  dev: acc={dev_stats['accuracy']:.3f} margin={dev_stats['margin']:.4f} "
-                  f"dpo={dev_stats['dpo_loss']:.4f}")
+            print(f"  preference dev: acc={dev_stats['accuracy']:.3f} "
+                  f"margin={dev_stats['margin']:.4f} dpo={dev_stats['dpo_loss']:.4f}")
+
+        gen_metrics = {}
+        if gen_questions:
+            _, gen_metrics, gen_failures = run_generation_eval(
+                policy, gen_questions, stoi, itos, args, f"epoch {epoch + 1}")
+            history["generated_dev"].append(dict(epoch=epoch + 1, **gen_metrics))
+            failures_log.append(dict(epoch=epoch + 1, **gen_failures))
 
         payload = {
             "model_state_dict": policy.state_dict(),  # key expected by Step 8
@@ -354,23 +440,73 @@ def main(argv=None):
             "config": vars(args),
             "train_metrics": epoch_avg,
             "dev_metrics": dev_stats,
+            "generated_dev_metrics": gen_metrics,
         }
         torch.save(payload, out_path)
         print(f"Saved checkpoint to {out_path}")
-        # Preference accuracy saturates at 1.000 within an epoch, so break ties
-        # on the reward margin; otherwise "best" just means "first".
-        score = (dev_stats.get("accuracy", epoch_avg["accuracy"]),
-                 dev_stats.get("margin", epoch_avg["margin"]))
-        if args.save_best and score > best:
-            best = score
-            torch.save(payload, out_path.with_name(out_path.stem + "_best.pt"))
-            print(f"  new best ({score:.3f}) -> {out_path.with_name(out_path.stem + '_best.pt')}")
+        if not args.save_best:
+            pass
+        elif gen_metrics:
+            # Select on what Task 3 actually measures. Preference accuracy
+            # saturates inside one epoch and would always pick the first.
+            if gen_metrics["answer_accuracy"] > best_generated:
+                best_generated = gen_metrics["answer_accuracy"]
+                torch.save(payload, generated_best_path)
+                print(f"  new best generated accuracy ({best_generated:.1%}) "
+                      f"-> {generated_best_path}")
+        else:
+            # Only when generated evaluation is switched off. Format the tuple
+            # element-wise; "{tuple:.3f}" raises TypeError.
+            score = (dev_stats.get("accuracy", epoch_avg.get("accuracy", 0.0)),
+                     dev_stats.get("margin", epoch_avg.get("margin", 0.0)))
+            if score > best:
+                best = score
+                best_path = out_path.with_name(out_path.stem + "_best.pt")
+                torch.save(payload, best_path)
+                print(f"  new best preference (acc={score[0]:.3f}, "
+                      f"margin={score[1]:.4f}) -> {best_path}")
 
+    if failures_log:
+        failures_path = out_path.with_name("task2_generation_failures.json")
+        failures_path.write_text(json.dumps(failures_log, indent=2))
+        print(f"Wrote {failures_path}")
     history_path = out_path.with_name("task2_history.json")
     history_path.write_text(json.dumps(history, indent=2, default=str))
     print(f"Wrote {history_path}")
     plot_history(history, out_path.with_name("task2_training_curves.png"))
+    plot_generated_accuracy(history, out_path.with_name("task2_generated_accuracy.png"))
+    if history["generated_dev"]:
+        first, last = history["generated_dev"][0], history["generated_dev"][-1]
+        print(f"generated answer accuracy: {first['answer_accuracy']:.1%} (epoch "
+              f"{first['epoch']}) -> {last['answer_accuracy']:.1%} (epoch {last['epoch']}); "
+              f"best {best_generated:.1%}")
     return history
+
+
+def plot_generated_accuracy(history, path):
+    rows = history.get("generated_dev") or []
+    if len(rows) < 2:
+        return
+    try:
+        import matplotlib
+        matplotlib.use("Agg")
+        import matplotlib.pyplot as plt
+    except ImportError:
+        return
+    plt.figure()
+    plt.plot([r["epoch"] for r in rows], [100 * r["answer_accuracy"] for r in rows],
+             "o-", label="answer accuracy")
+    plt.plot([r["epoch"] for r in rows], [100 * r["fully_verified_accuracy"] for r in rows],
+             "s--", label="fully verified")
+    plt.xlabel("Epoch (0 = before training)")
+    plt.ylabel("Generated development accuracy (%)")
+    plt.ylim(0, 100)
+    plt.grid(alpha=0.3)
+    plt.legend()
+    plt.tight_layout()
+    plt.savefig(path, dpi=150)
+    plt.close()
+    print(f"Wrote {path}")
 
 
 def plot_history(history, path):
@@ -385,17 +521,24 @@ def plot_history(history, path):
     if not train:
         return
     xs = list(range(len(train)))
+    # The sft objective logs no preference metrics, so draw only what exists.
+    have = lambda key: all(key in r for r in train)
     fig, axes = plt.subplots(1, 3, figsize=(15, 4))
     axes[0].plot(xs, [r["loss"] for r in train], label="total")
-    axes[0].plot(xs, [r["dpo_loss"] for r in train], label="dpo")
+    for key, label in (("dpo_loss", "dpo"), ("sft_loss", "positive NLL")):
+        if have(key):
+            axes[0].plot(xs, [r[key] for r in train], label=label)
     axes[0].set_title("loss"); axes[0].legend()
-    axes[1].plot(xs, [r["accuracy"] for r in train], label="train")
-    if history["dev"]:
-        step = max(1, len(xs) // max(1, len(history["dev"])))
-        axes[1].plot([min(len(xs) - 1, (i + 1) * step - 1) for i in range(len(history["dev"]))],
-                     [r["accuracy"] for r in history["dev"]], "o-", label="dev")
-    axes[1].set_title("preference accuracy"); axes[1].legend()
-    axes[2].plot(xs, [r["margin"] for r in train])
+    if have("accuracy"):
+        axes[1].plot(xs, [r["accuracy"] for r in train], label="train")
+        if history["dev"]:
+            step = max(1, len(xs) // max(1, len(history["dev"])))
+            axes[1].plot([min(len(xs) - 1, (i + 1) * step - 1) for i in range(len(history["dev"]))],
+                         [r["accuracy"] for r in history["dev"]], "o-", label="dev")
+        axes[1].legend()
+    axes[1].set_title("preference accuracy")
+    if have("margin"):
+        axes[2].plot(xs, [r["margin"] for r in train])
     axes[2].set_title("implicit reward margin")
     for ax in axes:
         ax.set_xlabel(f"logged step (every {history['config']['log_every']} batches)")

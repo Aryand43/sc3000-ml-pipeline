@@ -1,0 +1,1988 @@
+[
+  {
+    "epoch": 0,
+    "stage": "before training",
+    "failure_modes": {
+      "wrong_answer": 30,
+      "unparsed": 0,
+      "truncated": 0
+    },
+    "cases": [
+      {
+        "question": "56*63=?",
+        "expected_answer": 3528,
+        "category": "multiplication",
+        "response": "The answer is 3098 because 56*63=3098.",
+        "parsed_answer": 3098,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "101-121=?",
+        "expected_answer": -20,
+        "category": "subtraction",
+        "response": "The answer is -10 because 101-121=-10.",
+        "parsed_answer": -10,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "x-83=-23,x=?",
+        "expected_answer": 60,
+        "category": "algebra",
+        "response": "The answer is 50 because -23+83=50.",
+        "parsed_answer": 50,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "x/64=-95,x=?",
+        "expected_answer": -6080,
+        "category": "algebra",
+        "response": "The answer is -6190 because -95*64=-6190.",
+        "parsed_answer": -6190,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "x/95=-21,x=?",
+        "expected_answer": -1995,
+        "category": "algebra",
+        "response": "The answer is -2775 because -21*95=-2775.",
+        "parsed_answer": -2775,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "30*34=?",
+        "expected_answer": 1020,
+        "category": "multiplication",
+        "response": "The answer is 920 because 30*34=920.",
+        "parsed_answer": 920,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "x/34=68,x=?",
+        "expected_answer": 2312,
+        "category": "algebra",
+        "response": "The answer is 2172 because 68*34=2172.",
+        "parsed_answer": 2172,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "38*27=?",
+        "expected_answer": 1026,
+        "category": "multiplication",
+        "response": "The answer is 1066 because 38*27=1066.",
+        "parsed_answer": 1066,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "137-16=?",
+        "expected_answer": 121,
+        "category": "subtraction",
+        "response": "The answer is 111 because 137-16=111.",
+        "parsed_answer": 111,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "47-39=?",
+        "expected_answer": 8,
+        "category": "subtraction",
+        "response": "The answer is 18 because 47-39=18.",
+        "parsed_answer": 18,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "196+106=?",
+        "expected_answer": 302,
+        "category": "addition",
+        "response": "The answer is 292 because 196+106=292.",
+        "parsed_answer": 292,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "8*63=?",
+        "expected_answer": 504,
+        "category": "multiplication",
+        "response": "The answer is 514 because 8*63=514.",
+        "parsed_answer": 514,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "x/27=-82,x=?",
+        "expected_answer": -2214,
+        "category": "algebra",
+        "response": "The answer is -2194 because -82*27=-2194.",
+        "parsed_answer": -2194,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "14*57=?",
+        "expected_answer": 798,
+        "category": "multiplication",
+        "response": "The answer is 828 because 14*57=828.",
+        "parsed_answer": 828,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "68*19=?",
+        "expected_answer": 1292,
+        "category": "multiplication",
+        "response": "The answer is 1372 because 68*19=1372.",
+        "parsed_answer": 1372,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "87*72=?",
+        "expected_answer": 6264,
+        "category": "multiplication",
+        "response": "The answer is 6094 because 87*72=6094.",
+        "parsed_answer": 6094,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "26*75=?",
+        "expected_answer": 1950,
+        "category": "multiplication",
+        "response": "The answer is 1970 because 26*75=1970.",
+        "parsed_answer": 1970,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "22*72=?",
+        "expected_answer": 1584,
+        "category": "multiplication",
+        "response": "The answer is 1564 because 22*72=1564.",
+        "parsed_answer": 1564,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "14-x=8,x=?",
+        "expected_answer": 6,
+        "category": "algebra",
+        "response": "The answer is 16 because 14-8=16.",
+        "parsed_answer": 16,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "14*48=?",
+        "expected_answer": 672,
+        "category": "multiplication",
+        "response": "The answer is 628 because 14*48=628.",
+        "parsed_answer": 628,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "544/16=?",
+        "expected_answer": 34,
+        "category": "division",
+        "response": "The answer is 39 because 544/16=39.",
+        "parsed_answer": 39,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "56*86=?",
+        "expected_answer": 4816,
+        "category": "multiplication",
+        "response": "The answer is 4206 because 56*86=4206.",
+        "parsed_answer": 4206,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "76*61=?",
+        "expected_answer": 4636,
+        "category": "multiplication",
+        "response": "The answer is 4076 because 76*61=4076.",
+        "parsed_answer": 4076,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "72-x=101,x=?",
+        "expected_answer": -29,
+        "category": "algebra",
+        "response": "The answer is -39 because 72-101=-39.",
+        "parsed_answer": -39,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "x-68=-86,x=?",
+        "expected_answer": -18,
+        "category": "algebra",
+        "response": "The answer is -28 because -86+68=-28.",
+        "parsed_answer": -28,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "x/79=28,x=?",
+        "expected_answer": 2212,
+        "category": "algebra",
+        "response": "The answer is 2172 because 28*79=2172.",
+        "parsed_answer": 2172,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "1275/15=?",
+        "expected_answer": 85,
+        "category": "division",
+        "response": "The answer is 99 because 1275/15=99.",
+        "parsed_answer": 99,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "x-97=-89,x=?",
+        "expected_answer": 8,
+        "category": "algebra",
+        "response": "The answer is -12 because -89+97=-12.",
+        "parsed_answer": -12,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "7565/85=?",
+        "expected_answer": 89,
+        "category": "division",
+        "response": "The answer is 83 because 7565/85=83.",
+        "parsed_answer": 83,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "3060/68=?",
+        "expected_answer": 45,
+        "category": "division",
+        "response": "The answer is 40 because 3060/68=40.",
+        "parsed_answer": 40,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      }
+    ]
+  },
+  {
+    "epoch": 1,
+    "stage": "epoch 1",
+    "failure_modes": {
+      "wrong_answer": 37,
+      "unparsed": 0,
+      "truncated": 0
+    },
+    "cases": [
+      {
+        "question": "56*63=?",
+        "expected_answer": 3528,
+        "category": "multiplication",
+        "response": "The answer is 3628 because 56*63=3628.",
+        "parsed_answer": 3628,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "101-121=?",
+        "expected_answer": -20,
+        "category": "subtraction",
+        "response": "The answer is -10 because 101-121=-10.",
+        "parsed_answer": -10,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "40*39=?",
+        "expected_answer": 1560,
+        "category": "multiplication",
+        "response": "The answer is 1460 because 40*39=1460.",
+        "parsed_answer": 1460,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "2772/42=?",
+        "expected_answer": 66,
+        "category": "division",
+        "response": "The answer is 61 because 2772/42=61.",
+        "parsed_answer": 61,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "x-83=-23,x=?",
+        "expected_answer": 60,
+        "category": "algebra",
+        "response": "The answer is 50 because -23+83=50.",
+        "parsed_answer": 50,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "x/64=-95,x=?",
+        "expected_answer": -6080,
+        "category": "algebra",
+        "response": "The answer is -6020 because -95*64=-6020.",
+        "parsed_answer": -6020,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "x/95=-21,x=?",
+        "expected_answer": -1995,
+        "category": "algebra",
+        "response": "The answer is -2925 because -21*95=-2925.",
+        "parsed_answer": -2925,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "30*34=?",
+        "expected_answer": 1020,
+        "category": "multiplication",
+        "response": "The answer is 920 because 30*34=920.",
+        "parsed_answer": 920,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "93-104=?",
+        "expected_answer": -11,
+        "category": "subtraction",
+        "response": "The answer is -19 because 93-104=-19.",
+        "parsed_answer": -19,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "x/34=68,x=?",
+        "expected_answer": 2312,
+        "category": "algebra",
+        "response": "The answer is 2112 because 68*34=2112.",
+        "parsed_answer": 2112,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "38*27=?",
+        "expected_answer": 1026,
+        "category": "multiplication",
+        "response": "The answer is 1006 because 38*27=1006.",
+        "parsed_answer": 1006,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "1188/22=?",
+        "expected_answer": 54,
+        "category": "division",
+        "response": "The answer is 59 because 1188/22=59.",
+        "parsed_answer": 59,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "181-51=?",
+        "expected_answer": 130,
+        "category": "subtraction",
+        "response": "The answer is 120 because 181-51=120.",
+        "parsed_answer": 120,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "77*14=?",
+        "expected_answer": 1078,
+        "category": "multiplication",
+        "response": "The answer is 1128 because 77*14=1128.",
+        "parsed_answer": 1128,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "137-16=?",
+        "expected_answer": 121,
+        "category": "subtraction",
+        "response": "The answer is 111 because 137-16=111.",
+        "parsed_answer": 111,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "47-39=?",
+        "expected_answer": 8,
+        "category": "subtraction",
+        "response": "The answer is 18 because 47-39=18.",
+        "parsed_answer": 18,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "4368/48=?",
+        "expected_answer": 91,
+        "category": "division",
+        "response": "The answer is 96 because 4368/48=96.",
+        "parsed_answer": 96,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "8*63=?",
+        "expected_answer": 504,
+        "category": "multiplication",
+        "response": "The answer is 514 because 8*63=514.",
+        "parsed_answer": 514,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "x/27=-82,x=?",
+        "expected_answer": -2214,
+        "category": "algebra",
+        "response": "The answer is -2294 because -82*27=-2294.",
+        "parsed_answer": -2294,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "14*57=?",
+        "expected_answer": 798,
+        "category": "multiplication",
+        "response": "The answer is 828 because 14*57=828.",
+        "parsed_answer": 828,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "68*19=?",
+        "expected_answer": 1292,
+        "category": "multiplication",
+        "response": "The answer is 1272 because 68*19=1272.",
+        "parsed_answer": 1272,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "87*72=?",
+        "expected_answer": 6264,
+        "category": "multiplication",
+        "response": "The answer is 6094 because 87*72=6094.",
+        "parsed_answer": 6094,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "26*75=?",
+        "expected_answer": 1950,
+        "category": "multiplication",
+        "response": "The answer is 1920 because 26*75=1920.",
+        "parsed_answer": 1920,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "22*72=?",
+        "expected_answer": 1584,
+        "category": "multiplication",
+        "response": "The answer is 1604 because 22*72=1604.",
+        "parsed_answer": 1604,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "107-49=?",
+        "expected_answer": 58,
+        "category": "subtraction",
+        "response": "The answer is 68 because 107-49=68.",
+        "parsed_answer": 68,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "14-x=8,x=?",
+        "expected_answer": 6,
+        "category": "algebra",
+        "response": "The answer is 16 because 14-8=16.",
+        "parsed_answer": 16,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "14*48=?",
+        "expected_answer": 672,
+        "category": "multiplication",
+        "response": "The answer is 628 because 14*48=628.",
+        "parsed_answer": 628,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "544/16=?",
+        "expected_answer": 34,
+        "category": "division",
+        "response": "The answer is 39 because 544/16=39.",
+        "parsed_answer": 39,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "56*86=?",
+        "expected_answer": 4816,
+        "category": "multiplication",
+        "response": "The answer is 4106 because 56*86=4106.",
+        "parsed_answer": 4106,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "76*61=?",
+        "expected_answer": 4636,
+        "category": "multiplication",
+        "response": "The answer is 4656 because 76*61=4656.",
+        "parsed_answer": 4656,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "72-x=101,x=?",
+        "expected_answer": -29,
+        "category": "algebra",
+        "response": "The answer is -39 because 72-101=-39.",
+        "parsed_answer": -39,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "x-68=-86,x=?",
+        "expected_answer": -18,
+        "category": "algebra",
+        "response": "The answer is -28 because -86+68=-28.",
+        "parsed_answer": -28,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "x/79=28,x=?",
+        "expected_answer": 2212,
+        "category": "algebra",
+        "response": "The answer is 2312 because 28*79=2312.",
+        "parsed_answer": 2312,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "198-179=?",
+        "expected_answer": 19,
+        "category": "subtraction",
+        "response": "The answer is 29 because 198-179=29.",
+        "parsed_answer": 29,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "1275/15=?",
+        "expected_answer": 85,
+        "category": "division",
+        "response": "The answer is 99 because 1275/15=99.",
+        "parsed_answer": 99,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "x-97=-89,x=?",
+        "expected_answer": 8,
+        "category": "algebra",
+        "response": "The answer is -12 because -89+97=-12.",
+        "parsed_answer": -12,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "3060/68=?",
+        "expected_answer": 45,
+        "category": "division",
+        "response": "The answer is 40 because 3060/68=40.",
+        "parsed_answer": 40,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      }
+    ]
+  },
+  {
+    "epoch": 2,
+    "stage": "epoch 2",
+    "failure_modes": {
+      "wrong_answer": 33,
+      "unparsed": 0,
+      "truncated": 0
+    },
+    "cases": [
+      {
+        "question": "56*63=?",
+        "expected_answer": 3528,
+        "category": "multiplication",
+        "response": "The answer is 3698 because 56*63=3698.",
+        "parsed_answer": 3698,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "101-121=?",
+        "expected_answer": -20,
+        "category": "subtraction",
+        "response": "The answer is -10 because 101-121=-10.",
+        "parsed_answer": -10,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "40*39=?",
+        "expected_answer": 1560,
+        "category": "multiplication",
+        "response": "The answer is 1460 because 40*39=1460.",
+        "parsed_answer": 1460,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "2772/42=?",
+        "expected_answer": 66,
+        "category": "division",
+        "response": "The answer is 61 because 2772/42=61.",
+        "parsed_answer": 61,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "x/64=-95,x=?",
+        "expected_answer": -6080,
+        "category": "algebra",
+        "response": "The answer is -6020 because -95*64=-6020.",
+        "parsed_answer": -6020,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "x/95=-21,x=?",
+        "expected_answer": -1995,
+        "category": "algebra",
+        "response": "The answer is -2025 because -21*95=-2025.",
+        "parsed_answer": -2025,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "x/34=68,x=?",
+        "expected_answer": 2312,
+        "category": "algebra",
+        "response": "The answer is 2228 because 68*34=2228.",
+        "parsed_answer": 2228,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "38*27=?",
+        "expected_answer": 1026,
+        "category": "multiplication",
+        "response": "The answer is 1096 because 38*27=1096.",
+        "parsed_answer": 1096,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "27/3=?",
+        "expected_answer": 9,
+        "category": "division",
+        "response": "The answer is 8 because 27/3=8.",
+        "parsed_answer": 8,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "181-51=?",
+        "expected_answer": 130,
+        "category": "subtraction",
+        "response": "The answer is 120 because 181-51=120.",
+        "parsed_answer": 120,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "77*14=?",
+        "expected_answer": 1078,
+        "category": "multiplication",
+        "response": "The answer is 1028 because 77*14=1028.",
+        "parsed_answer": 1028,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "47-39=?",
+        "expected_answer": 8,
+        "category": "subtraction",
+        "response": "The answer is 18 because 47-39=18.",
+        "parsed_answer": 18,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "90+16=?",
+        "expected_answer": 106,
+        "category": "addition",
+        "response": "The answer is 156 because 90+16=156.",
+        "parsed_answer": 156,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "4368/48=?",
+        "expected_answer": 91,
+        "category": "division",
+        "response": "The answer is 96 because 4368/48=96.",
+        "parsed_answer": 96,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "8*63=?",
+        "expected_answer": 504,
+        "category": "multiplication",
+        "response": "The answer is 514 because 8*63=514.",
+        "parsed_answer": 514,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "x/27=-82,x=?",
+        "expected_answer": -2214,
+        "category": "algebra",
+        "response": "The answer is -2294 because -82*27=-2294.",
+        "parsed_answer": -2294,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "14*57=?",
+        "expected_answer": 798,
+        "category": "multiplication",
+        "response": "The answer is 728 because 14*57=728.",
+        "parsed_answer": 728,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "68*19=?",
+        "expected_answer": 1292,
+        "category": "multiplication",
+        "response": "The answer is 1272 because 68*19=1272.",
+        "parsed_answer": 1272,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "87*72=?",
+        "expected_answer": 6264,
+        "category": "multiplication",
+        "response": "The answer is 6094 because 87*72=6094.",
+        "parsed_answer": 6094,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "26*75=?",
+        "expected_answer": 1950,
+        "category": "multiplication",
+        "response": "The answer is 1920 because 26*75=1920.",
+        "parsed_answer": 1920,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "22*72=?",
+        "expected_answer": 1584,
+        "category": "multiplication",
+        "response": "The answer is 1604 because 22*72=1604.",
+        "parsed_answer": 1604,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "14-x=8,x=?",
+        "expected_answer": 6,
+        "category": "algebra",
+        "response": "The answer is 16 because 14-8=16.",
+        "parsed_answer": 16,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "14*48=?",
+        "expected_answer": 672,
+        "category": "multiplication",
+        "response": "The answer is 628 because 14*48=628.",
+        "parsed_answer": 628,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "544/16=?",
+        "expected_answer": 34,
+        "category": "division",
+        "response": "The answer is 39 because 544/16=39.",
+        "parsed_answer": 39,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "56*86=?",
+        "expected_answer": 4816,
+        "category": "multiplication",
+        "response": "The answer is 4906 because 56*86=4906.",
+        "parsed_answer": 4906,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "76*61=?",
+        "expected_answer": 4636,
+        "category": "multiplication",
+        "response": "The answer is 4656 because 76*61=4656.",
+        "parsed_answer": 4656,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "72-x=101,x=?",
+        "expected_answer": -29,
+        "category": "algebra",
+        "response": "The answer is -39 because 72-101=-39.",
+        "parsed_answer": -39,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "x-68=-86,x=?",
+        "expected_answer": -18,
+        "category": "algebra",
+        "response": "The answer is -28 because -86+68=-28.",
+        "parsed_answer": -28,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "x/79=28,x=?",
+        "expected_answer": 2212,
+        "category": "algebra",
+        "response": "The answer is 2272 because 28*79=2272.",
+        "parsed_answer": 2272,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "1275/15=?",
+        "expected_answer": 85,
+        "category": "division",
+        "response": "The answer is 83 because 1275/15=83.",
+        "parsed_answer": 83,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "x-97=-89,x=?",
+        "expected_answer": 8,
+        "category": "algebra",
+        "response": "The answer is 18 because -89+97=18.",
+        "parsed_answer": 18,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "7565/85=?",
+        "expected_answer": 89,
+        "category": "division",
+        "response": "The answer is 83 because 7565/85=83.",
+        "parsed_answer": 83,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "3060/68=?",
+        "expected_answer": 45,
+        "category": "division",
+        "response": "The answer is 40 because 3060/68=40.",
+        "parsed_answer": 40,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      }
+    ]
+  },
+  {
+    "epoch": 3,
+    "stage": "epoch 3",
+    "failure_modes": {
+      "wrong_answer": 32,
+      "unparsed": 0,
+      "truncated": 0
+    },
+    "cases": [
+      {
+        "question": "56*63=?",
+        "expected_answer": 3528,
+        "category": "multiplication",
+        "response": "The answer is 3378 because 56*63=3378.",
+        "parsed_answer": 3378,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "101-121=?",
+        "expected_answer": -20,
+        "category": "subtraction",
+        "response": "The answer is -10 because 101-121=-10.",
+        "parsed_answer": -10,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "40*39=?",
+        "expected_answer": 1560,
+        "category": "multiplication",
+        "response": "The answer is 1460 because 40*39=1460.",
+        "parsed_answer": 1460,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "2772/42=?",
+        "expected_answer": 66,
+        "category": "division",
+        "response": "The answer is 61 because 2772/42=61.",
+        "parsed_answer": 61,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "x-83=-23,x=?",
+        "expected_answer": 60,
+        "category": "algebra",
+        "response": "The answer is 50 because -23+83=50.",
+        "parsed_answer": 50,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "10-18=?",
+        "expected_answer": -8,
+        "category": "subtraction",
+        "response": "The answer is -9 because 10-18=-9.",
+        "parsed_answer": -9,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "x/64=-95,x=?",
+        "expected_answer": -6080,
+        "category": "algebra",
+        "response": "The answer is -6030 because -95*64=-6030.",
+        "parsed_answer": -6030,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "x/95=-21,x=?",
+        "expected_answer": -1995,
+        "category": "algebra",
+        "response": "The answer is -2075 because -21*95=-2075.",
+        "parsed_answer": -2075,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "442/34=?",
+        "expected_answer": 13,
+        "category": "division",
+        "response": "The answer is 18 because 442/34=18.",
+        "parsed_answer": 18,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "38*27=?",
+        "expected_answer": 1026,
+        "category": "multiplication",
+        "response": "The answer is 1076 because 38*27=1076.",
+        "parsed_answer": 1076,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "1188/22=?",
+        "expected_answer": 54,
+        "category": "division",
+        "response": "The answer is 59 because 1188/22=59.",
+        "parsed_answer": 59,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "77*14=?",
+        "expected_answer": 1078,
+        "category": "multiplication",
+        "response": "The answer is 1038 because 77*14=1038.",
+        "parsed_answer": 1038,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "47-39=?",
+        "expected_answer": 8,
+        "category": "subtraction",
+        "response": "The answer is 18 because 47-39=18.",
+        "parsed_answer": 18,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "8*63=?",
+        "expected_answer": 504,
+        "category": "multiplication",
+        "response": "The answer is 554 because 8*63=554.",
+        "parsed_answer": 554,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "x/27=-82,x=?",
+        "expected_answer": -2214,
+        "category": "algebra",
+        "response": "The answer is -2254 because -82*27=-2254.",
+        "parsed_answer": -2254,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "14*57=?",
+        "expected_answer": 798,
+        "category": "multiplication",
+        "response": "The answer is 738 because 14*57=738.",
+        "parsed_answer": 738,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "68*19=?",
+        "expected_answer": 1292,
+        "category": "multiplication",
+        "response": "The answer is 1272 because 68*19=1272.",
+        "parsed_answer": 1272,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "87*72=?",
+        "expected_answer": 6264,
+        "category": "multiplication",
+        "response": "The answer is 6054 because 87*72=6054.",
+        "parsed_answer": 6054,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "26*75=?",
+        "expected_answer": 1950,
+        "category": "multiplication",
+        "response": "The answer is 1970 because 26*75=1970.",
+        "parsed_answer": 1970,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "22*72=?",
+        "expected_answer": 1584,
+        "category": "multiplication",
+        "response": "The answer is 1504 because 22*72=1504.",
+        "parsed_answer": 1504,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "14-x=8,x=?",
+        "expected_answer": 6,
+        "category": "algebra",
+        "response": "The answer is 16 because 14-8=16.",
+        "parsed_answer": 16,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "14*48=?",
+        "expected_answer": 672,
+        "category": "multiplication",
+        "response": "The answer is 632 because 14*48=632.",
+        "parsed_answer": 632,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "544/16=?",
+        "expected_answer": 34,
+        "category": "division",
+        "response": "The answer is 39 because 544/16=39.",
+        "parsed_answer": 39,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "56*86=?",
+        "expected_answer": 4816,
+        "category": "multiplication",
+        "response": "The answer is 4156 because 56*86=4156.",
+        "parsed_answer": 4156,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "76*61=?",
+        "expected_answer": 4636,
+        "category": "multiplication",
+        "response": "The answer is 4056 because 76*61=4056.",
+        "parsed_answer": 4056,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "72-x=101,x=?",
+        "expected_answer": -29,
+        "category": "algebra",
+        "response": "The answer is -39 because 72-101=-39.",
+        "parsed_answer": -39,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "x-68=-86,x=?",
+        "expected_answer": -18,
+        "category": "algebra",
+        "response": "The answer is -28 because -86+68=-28.",
+        "parsed_answer": -28,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "x/79=28,x=?",
+        "expected_answer": 2212,
+        "category": "algebra",
+        "response": "The answer is 2372 because 28*79=2372.",
+        "parsed_answer": 2372,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "1275/15=?",
+        "expected_answer": 85,
+        "category": "division",
+        "response": "The answer is 83 because 1275/15=83.",
+        "parsed_answer": 83,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "x-97=-89,x=?",
+        "expected_answer": 8,
+        "category": "algebra",
+        "response": "The answer is 18 because -89+97=18.",
+        "parsed_answer": 18,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "7565/85=?",
+        "expected_answer": 89,
+        "category": "division",
+        "response": "The answer is 83 because 7565/85=83.",
+        "parsed_answer": 83,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "3060/68=?",
+        "expected_answer": 45,
+        "category": "division",
+        "response": "The answer is 40 because 3060/68=40.",
+        "parsed_answer": 40,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      }
+    ]
+  },
+  {
+    "epoch": 4,
+    "stage": "epoch 4",
+    "failure_modes": {
+      "wrong_answer": 33,
+      "unparsed": 0,
+      "truncated": 0
+    },
+    "cases": [
+      {
+        "question": "56*63=?",
+        "expected_answer": 3528,
+        "category": "multiplication",
+        "response": "The answer is 3638 because 56*63=3638.",
+        "parsed_answer": 3638,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "101-121=?",
+        "expected_answer": -20,
+        "category": "subtraction",
+        "response": "The answer is -10 because 101-121=-10.",
+        "parsed_answer": -10,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "40*39=?",
+        "expected_answer": 1560,
+        "category": "multiplication",
+        "response": "The answer is 1460 because 40*39=1460.",
+        "parsed_answer": 1460,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "x-83=-23,x=?",
+        "expected_answer": 60,
+        "category": "algebra",
+        "response": "The answer is 50 because -23+83=50.",
+        "parsed_answer": 50,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "x/64=-95,x=?",
+        "expected_answer": -6080,
+        "category": "algebra",
+        "response": "The answer is -6090 because -95*64=-6090.",
+        "parsed_answer": -6090,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "x/95=-21,x=?",
+        "expected_answer": -1995,
+        "category": "algebra",
+        "response": "The answer is -2025 because -21*95=-2025.",
+        "parsed_answer": -2025,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "442/34=?",
+        "expected_answer": 13,
+        "category": "division",
+        "response": "The answer is 18 because 442/34=18.",
+        "parsed_answer": 18,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "30*34=?",
+        "expected_answer": 1020,
+        "category": "multiplication",
+        "response": "The answer is 920 because 30*34=920.",
+        "parsed_answer": 920,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "x/34=68,x=?",
+        "expected_answer": 2312,
+        "category": "algebra",
+        "response": "The answer is 2028 because 68*34=2028.",
+        "parsed_answer": 2028,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "38*27=?",
+        "expected_answer": 1026,
+        "category": "multiplication",
+        "response": "The answer is 1006 because 38*27=1006.",
+        "parsed_answer": 1006,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "1188/22=?",
+        "expected_answer": 54,
+        "category": "division",
+        "response": "The answer is 59 because 1188/22=59.",
+        "parsed_answer": 59,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "77*14=?",
+        "expected_answer": 1078,
+        "category": "multiplication",
+        "response": "The answer is 1028 because 77*14=1028.",
+        "parsed_answer": 1028,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "47-39=?",
+        "expected_answer": 8,
+        "category": "subtraction",
+        "response": "The answer is 18 because 47-39=18.",
+        "parsed_answer": 18,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "90+16=?",
+        "expected_answer": 106,
+        "category": "addition",
+        "response": "The answer is 156 because 90+16=156.",
+        "parsed_answer": 156,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "8*63=?",
+        "expected_answer": 504,
+        "category": "multiplication",
+        "response": "The answer is 554 because 8*63=554.",
+        "parsed_answer": 554,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "x/27=-82,x=?",
+        "expected_answer": -2214,
+        "category": "algebra",
+        "response": "The answer is -2244 because -82*27=-2244.",
+        "parsed_answer": -2244,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "14*57=?",
+        "expected_answer": 798,
+        "category": "multiplication",
+        "response": "The answer is 728 because 14*57=728.",
+        "parsed_answer": 728,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "68*19=?",
+        "expected_answer": 1292,
+        "category": "multiplication",
+        "response": "The answer is 1272 because 68*19=1272.",
+        "parsed_answer": 1272,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "87*72=?",
+        "expected_answer": 6264,
+        "category": "multiplication",
+        "response": "The answer is 6094 because 87*72=6094.",
+        "parsed_answer": 6094,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "26*75=?",
+        "expected_answer": 1950,
+        "category": "multiplication",
+        "response": "The answer is 1970 because 26*75=1970.",
+        "parsed_answer": 1970,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "22*72=?",
+        "expected_answer": 1584,
+        "category": "multiplication",
+        "response": "The answer is 1504 because 22*72=1504.",
+        "parsed_answer": 1504,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "107-49=?",
+        "expected_answer": 58,
+        "category": "subtraction",
+        "response": "The answer is 68 because 107-49=68.",
+        "parsed_answer": 68,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "14-x=8,x=?",
+        "expected_answer": 6,
+        "category": "algebra",
+        "response": "The answer is 16 because 14-8=16.",
+        "parsed_answer": 16,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "14*48=?",
+        "expected_answer": 672,
+        "category": "multiplication",
+        "response": "The answer is 632 because 14*48=632.",
+        "parsed_answer": 632,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "544/16=?",
+        "expected_answer": 34,
+        "category": "division",
+        "response": "The answer is 39 because 544/16=39.",
+        "parsed_answer": 39,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "56*86=?",
+        "expected_answer": 4816,
+        "category": "multiplication",
+        "response": "The answer is 4916 because 56*86=4916.",
+        "parsed_answer": 4916,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "76*61=?",
+        "expected_answer": 4636,
+        "category": "multiplication",
+        "response": "The answer is 4156 because 76*61=4156.",
+        "parsed_answer": 4156,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "72-x=101,x=?",
+        "expected_answer": -29,
+        "category": "algebra",
+        "response": "The answer is -39 because 72-101=-39.",
+        "parsed_answer": -39,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "x/79=28,x=?",
+        "expected_answer": 2212,
+        "category": "algebra",
+        "response": "The answer is 2372 because 28*79=2372.",
+        "parsed_answer": 2372,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "1275/15=?",
+        "expected_answer": 85,
+        "category": "division",
+        "response": "The answer is 83 because 1275/15=83.",
+        "parsed_answer": 83,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "x-97=-89,x=?",
+        "expected_answer": 8,
+        "category": "algebra",
+        "response": "The answer is 18 because -89+97=18.",
+        "parsed_answer": 18,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "7565/85=?",
+        "expected_answer": 89,
+        "category": "division",
+        "response": "The answer is 81 because 7565/85=81.",
+        "parsed_answer": 81,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "3060/68=?",
+        "expected_answer": 45,
+        "category": "division",
+        "response": "The answer is 40 because 3060/68=40.",
+        "parsed_answer": 40,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      }
+    ]
+  },
+  {
+    "epoch": 5,
+    "stage": "epoch 5",
+    "failure_modes": {
+      "wrong_answer": 27,
+      "unparsed": 0,
+      "truncated": 0
+    },
+    "cases": [
+      {
+        "question": "56*63=?",
+        "expected_answer": 3528,
+        "category": "multiplication",
+        "response": "The answer is 3698 because 56*63=3698.",
+        "parsed_answer": 3698,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "101-121=?",
+        "expected_answer": -20,
+        "category": "subtraction",
+        "response": "The answer is -10 because 101-121=-10.",
+        "parsed_answer": -10,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "x/64=-95,x=?",
+        "expected_answer": -6080,
+        "category": "algebra",
+        "response": "The answer is -6090 because -95*64=-6090.",
+        "parsed_answer": -6090,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "x/95=-21,x=?",
+        "expected_answer": -1995,
+        "category": "algebra",
+        "response": "The answer is -2085 because -21*95=-2085.",
+        "parsed_answer": -2085,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "38*27=?",
+        "expected_answer": 1026,
+        "category": "multiplication",
+        "response": "The answer is 1006 because 38*27=1006.",
+        "parsed_answer": 1006,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "1188/22=?",
+        "expected_answer": 54,
+        "category": "division",
+        "response": "The answer is 59 because 1188/22=59.",
+        "parsed_answer": 59,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "137-16=?",
+        "expected_answer": 121,
+        "category": "subtraction",
+        "response": "The answer is 111 because 137-16=111.",
+        "parsed_answer": 111,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "47-39=?",
+        "expected_answer": 8,
+        "category": "subtraction",
+        "response": "The answer is 18 because 47-39=18.",
+        "parsed_answer": 18,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "8*63=?",
+        "expected_answer": 504,
+        "category": "multiplication",
+        "response": "The answer is 554 because 8*63=554.",
+        "parsed_answer": 554,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "x/27=-82,x=?",
+        "expected_answer": -2214,
+        "category": "algebra",
+        "response": "The answer is -2254 because -82*27=-2254.",
+        "parsed_answer": -2254,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "14*57=?",
+        "expected_answer": 798,
+        "category": "multiplication",
+        "response": "The answer is 738 because 14*57=738.",
+        "parsed_answer": 738,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "68*19=?",
+        "expected_answer": 1292,
+        "category": "multiplication",
+        "response": "The answer is 1272 because 68*19=1272.",
+        "parsed_answer": 1272,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "87*72=?",
+        "expected_answer": 6264,
+        "category": "multiplication",
+        "response": "The answer is 6094 because 87*72=6094.",
+        "parsed_answer": 6094,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "26*75=?",
+        "expected_answer": 1950,
+        "category": "multiplication",
+        "response": "The answer is 1970 because 26*75=1970.",
+        "parsed_answer": 1970,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "22*72=?",
+        "expected_answer": 1584,
+        "category": "multiplication",
+        "response": "The answer is 1504 because 22*72=1504.",
+        "parsed_answer": 1504,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "107-49=?",
+        "expected_answer": 58,
+        "category": "subtraction",
+        "response": "The answer is 68 because 107-49=68.",
+        "parsed_answer": 68,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "14-x=8,x=?",
+        "expected_answer": 6,
+        "category": "algebra",
+        "response": "The answer is 16 because 14-8=16.",
+        "parsed_answer": 16,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "14*48=?",
+        "expected_answer": 672,
+        "category": "multiplication",
+        "response": "The answer is 632 because 14*48=632.",
+        "parsed_answer": 632,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "544/16=?",
+        "expected_answer": 34,
+        "category": "division",
+        "response": "The answer is 39 because 544/16=39.",
+        "parsed_answer": 39,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "56*86=?",
+        "expected_answer": 4816,
+        "category": "multiplication",
+        "response": "The answer is 4606 because 56*86=4606.",
+        "parsed_answer": 4606,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "76*61=?",
+        "expected_answer": 4636,
+        "category": "multiplication",
+        "response": "The answer is 4056 because 76*61=4056.",
+        "parsed_answer": 4056,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "72-x=101,x=?",
+        "expected_answer": -29,
+        "category": "algebra",
+        "response": "The answer is -39 because 72-101=-39.",
+        "parsed_answer": -39,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "x/79=28,x=?",
+        "expected_answer": 2212,
+        "category": "algebra",
+        "response": "The answer is 2372 because 28*79=2372.",
+        "parsed_answer": 2372,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "1275/15=?",
+        "expected_answer": 85,
+        "category": "division",
+        "response": "The answer is 83 because 1275/15=83.",
+        "parsed_answer": 83,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "x-97=-89,x=?",
+        "expected_answer": 8,
+        "category": "algebra",
+        "response": "The answer is 18 because -89+97=18.",
+        "parsed_answer": 18,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "7565/85=?",
+        "expected_answer": 89,
+        "category": "division",
+        "response": "The answer is 81 because 7565/85=81.",
+        "parsed_answer": 81,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      },
+      {
+        "question": "3060/68=?",
+        "expected_answer": 45,
+        "category": "division",
+        "response": "The answer is 40 because 3060/68=40.",
+        "parsed_answer": 40,
+        "stop_reason": "period",
+        "truncated": false,
+        "explanation_status": "incorrect_or_irrelevant"
+      }
+    ]
+  }
+]

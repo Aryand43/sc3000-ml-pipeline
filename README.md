@@ -30,7 +30,7 @@ Two stages. Supervised fit on the positive responses first, then DPO from that
 checkpoint with both policy and frozen reference initialised from it.
 
 ```bash
-python dpo/train_dpo.py --objective sft --lr 1e-3 --out runs/math_sft/sft.pt
+python dpo/train_dpo.py --objective sft --lr 1e-3 --epochs 20 --out runs/math_sft/sft.pt
 python dpo/train_dpo.py --checkpoint runs/math_sft/sft_generated_best.pt --lambda-sft 1.0 --out runs/sft_then_dpo/dpo.pt
 ```
 
@@ -51,23 +51,34 @@ python dpo/evaluate_task3.py --checkpoint dpo/dpo.pt
 
 Dev answer accuracy, same questions and decoding for every arm.
 
-| arm | best | mean over 5 epochs |
-| --- | --- | --- |
-| original `sft/gpt.pt` | 0% | n/a |
-| direct DPO | 17% | n/a |
-| direct DPO, `--lambda-sft 1.0` | 24% | 14.6% |
-| math-SFT only, lr 1e-3 | 70% | 33.8% |
-| math-SFT then DPO | **73%** | 67.6% |
+| arm | best |
+| --- | --- |
+| original `sft/gpt.pt` | 0% |
+| direct DPO | 17% |
+| direct DPO, `--lambda-sft 1.0` | 24% |
+| math-SFT, 5 epochs | 70% |
+| math-SFT, 20 epochs | **81%** |
+| math-SFT 20 epochs then DPO | 80% |
 
-The 73% run sits in a 63 to 73 band across epochs, so treat 67.6% as its level.
-By category at 73%: addition 20/20, subtraction 16/20, division 15/20,
-algebra 13/20, multiplication 9/20. All 27 misses are wrong arithmetic, with
-nothing unparsed or truncated.
+`dpo/dpo.pt` is the last of these. By category: addition 20/20,
+subtraction 19/20, division 17/20, algebra 15/20, multiplication 9/20.
+Every miss is wrong arithmetic, nothing unparsed or truncated.
 
-Learning rate was the lever, not the DPO objective. The same supervised fit at
-lr 1e-4 reaches only 17%. `--lambda-sft` has little effect because Adam
-normalises per parameter, so the NLL term already dominates once the DPO
-gradient saturates.
+Training length was the lever. At 5 epochs the model scored 71% on questions it
+had trained on and 73% on unseen ones, so it was underfitting rather than
+memorising. Twenty epochs moves that to 91% train and 80% dev, which closes the
+gap and exhausts the lever; more epochs now overfit.
+
+Multiplication did not move at all between the two, at 9/20 in both. Every
+other category improved. The model emits the answer most significant digit
+first while carries propagate the other way, so it has to commit to the leading
+digit before doing the carry work. 22 of the 27 misses at 73% were off by an
+exact multiple of ten. Fixing this needs a scratchpad or reversed digits in the
+response, which the scoring format does not currently allow.
+
+DPO is roughly neutral here. It takes 81% to 80%, within noise on 100
+questions. Its real contribution is earlier: the original SFT checkpoint
+refuses every question, and any math fine-tuning removes that.
 
 Preference accuracy saturates at 1.000 in epoch 1 while generation is still
 bad, which is why checkpoints are selected on answer accuracy instead.

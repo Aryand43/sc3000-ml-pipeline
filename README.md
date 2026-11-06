@@ -1,6 +1,34 @@
 # SC3000 / CZ3005 — Teaching NanoGPT to Do Math
 
-The submission entry point is **`dpo/dpo.ipynb`**. It contains dataset generation/validation, the complete supervised-warm-up and DPO trainer, generated-answer scoring, plots and saved results. The supplied `model.py` and `configurator.py` are unchanged.
+> **Start here:** [dpo/dpo.ipynb](dpo/dpo.ipynb)
+>
+> **Final model:** [dpo/dpo.pt](dpo/dpo.pt)
+>
+> **Fresh held-out result:** **79/100** (greedy decoding; 20 questions per category)
+
+The notebook is the complete submission entry point: Tasks 1–3 implementation, explanations, saved outputs and failure analysis. You do not need to read the optional Python scripts to assess the project. The supplied `model.py` and `configurator.py` are unchanged.
+
+## Examiner's guide
+
+1. Open **`dpo/dpo.ipynb`** to inspect the saved dataset checks, recorded training curves and all generated test answers without running anything.
+2. To verify the result, follow **Run the notebook** below and run all cells. Default execution does not repeat the long training run or overwrite the final model.
+3. Use **`dpo/task3_final_summary.json`** for compact scores and **`dpo/task3_final_results.json`** for every prediction. Development accuracy is reported separately from the fresh test.
+4. Ignore **`archive/`** when grading final results. It preserves an old checkpoint and superseded diagnostics, excluded from the submission ZIP.
+
+## Which files matter?
+
+| Group | Files | Purpose |
+|---|---|---|
+| **Main deliverables** | `dpo/dpo.ipynb`, `dpo/dpo.pt`, `dpo/pos_neg_pairs.json` | Complete notebook, final weights and 100,000 training pairs |
+| **Required notebook assets** | `model.py`, `configurator.py`, `sft/meta.pkl`, actual `sft/gpt.pt` | Supplied architecture, vocabulary and pretrained weights; a Git LFS pointer is insufficient |
+| **Required notebook data** | `dpo/task1_dev_pairs.json`, `dpo/task2_history.json`, `dpo/task2_sft_history.json`, `dpo/task3_fresh_test_questions.json`, `dpo/task3_previous_test_questions.json` | Separate development data, recorded real training histories and frozen evaluation questions |
+| **Final evidence** | `dpo/task1_validation.json`, `dpo/task3_final_results.json`, `dpo/task3_final_summary.json`, `dpo/task2_*.png` | Validation, predictions, scores and training plots |
+| **Setup and packaging** | `requirements.txt`, `VALIDATION_ENVIRONMENT.json`, `package_submission.py` | Tested environment, execution checks and focused ZIP creation |
+| **Optional support** | `dpo/train_dpo.py`, `dpo/evaluate_task3.py`, `dpo/math_evaluation.py`, `dpo/TASK3_HANDOFF.md` | Command-line alternatives and integration notes; implementation is already embedded in the notebook |
+| **Regenerable metadata** | `dpo/task1_metadata.json` | Per-pair provenance created by the notebook; ignored in Git and not a required input |
+| **Archived — not final results** | `archive/` | Preserved historical checkpoint and diagnostic reports |
+
+## Team contributions
 
 | Team member | Contribution |
 |---|---|
@@ -49,7 +77,7 @@ python dpo/train_dpo.py --objective sft --checkpoint sft/gpt.pt --lr 0.001 --epo
 python dpo/train_dpo.py --objective dpo --checkpoint runs/reproduction/math_sft/sft_generated_best.pt --lambda-sft 1.0 --lr 0.0001 --epochs 5 --out runs/reproduction/sft_then_dpo/dpo.pt
 ```
 
-Historical absolute paths in the recorded JSON logs describe the original training machine; they are not used by these reproduction commands. `dpo_best.pt` is an old alternative and is not selected by the final notebook or included in the submission ZIP.
+Historical absolute paths in the recorded JSON logs describe the original training machine; they are not used by these reproduction commands. The old alternative is preserved at `archive/checkpoints/dpo_best.pt`; it is not selected by the final notebook or included in the submission ZIP.
 
 ## Evaluated results
 
@@ -73,7 +101,7 @@ python dpo/evaluate_task3.py --checkpoint dpo/dpo.pt --device cpu
 python dpo/evaluate_task3.py --checkpoint dpo/dpo.pt --development --device cpu
 ```
 
-The CLI writes `dpo/task3_cli_results.json`, separate from notebook results. See `dpo/TASK3_HANDOFF.md` for reuse during training. Existing `task3_generation_results.json` is a recorded DEVELOPMENT evaluation from the training machine, not the final fresh benchmark.
+The CLI writes `dpo/task3_cli_results.json`, separate from notebook results. See `dpo/TASK3_HANDOFF.md` for reuse during training. The earlier development-only report is preserved at `archive/reports/task3_generation_results.json`. It is superseded by the consolidated final reports and is not the fresh-test score.
 
 ## Build the submission
 
@@ -83,7 +111,7 @@ After running and saving the notebook:
 python package_submission.py --out YOUR_TEAM_NAME.zip
 ```
 
-The packager checks complete notebook execution, errors, required files, actual checkpoint bytes, preference count/schema and result/checkpoint consistency. It writes a SHA256 manifest and verifies every archived payload. The ZIP includes the notebook, datasets, full original and final weights, model/vocabulary, training histories, code, figures and evaluation outputs; it excludes experiments and caches. Rename to the actual team name. The assignment's stated deadline is 11:59 pm Singapore time on 6 November 2026.
+The packager checks complete notebook execution, errors, required files, actual checkpoint bytes, preference count/schema and result/checkpoint consistency. It writes a SHA256 manifest and verifies every archived payload. By default, the ZIP contains the notebook, its required assets/data, environment instructions and final evidence. It excludes `archive/`, experiments, caches, the optional CLI scripts/handoff and bulky regenerable per-pair metadata. All training/scoring code remains embedded in the notebook. Use `--include-support` if you also want the optional CLI scripts, handoff and regenerated per-pair metadata. Use `--check-only` to validate inputs and inspect the file list **without creating a ZIP**. Rename to the actual team name. The assignment's stated deadline is 11:59 pm Singapore time on 6 November 2026.
 
 ## Sources
 

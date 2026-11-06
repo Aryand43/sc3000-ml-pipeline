@@ -4,7 +4,7 @@ The complete single-notebook submission is now `dpo/dpo.ipynb`, with Tasks 1–3
 
 ## Results and checkpoint
 
-Use the provided final `dpo.pt`, SHA256 `7ee2ada8e5824a39cae2b48a93a59527e9e39ff7619c0586f69c2cadd66dd194`. The notebook does not use `dpo_best.pt`. It obtains 79/100 fresh frozen questions, 85/100 on the old diagnostic benchmark, 80/100 development and 4/5 supplied examples. Recorded warm-up/DPO histories are explicitly distinguished from the small training smoke tests and current model inference.
+Use the provided final `dpo.pt`, SHA256 `7ee2ada8e5824a39cae2b48a93a59527e9e39ff7619c0586f69c2cadd66dd194`. The old `archive/checkpoints/dpo_best.pt` is historical and not used by the notebook. The archived reports are not final-test evidence. It obtains 79/100 fresh frozen questions, 85/100 on the old diagnostic benchmark, 80/100 development and 4/5 supplied examples. Recorded warm-up/DPO histories are explicitly distinguished from the small training smoke tests and current model inference.
 
 The 100 fresh questions exclude normalized training, development and old-benchmark questions. Do not tune on their results while calling them untouched final evaluation. Development is used for checkpoint selection; the previous 100-question benchmark is diagnostic after inspection. See README for category results and limitations.
 

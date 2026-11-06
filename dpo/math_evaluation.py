@@ -3,101 +3,168 @@
 Importing this module does not load checkpoints, generate answers or train models.
 The arithmetic oracle is used only after generation, never to supply model tokens.
 """
-from collections import Counter, defaultdict
-from fractions import Fraction
 import random
 import re
+from collections import defaultdict
+from fractions import Fraction
+
+ANSWER_PATTERN = r'^The answer is (-?\d+)(?= because |\.$|$)'
+EXPLANATION_PATTERN = r'The answer is (-?\d+) because (.+)=(-?\d+)\.'
+POSITIVE_ANSWER_PATTERN = r'The answer is (-?\d+) because '
+BINARY_EXPRESSION_PATTERN = r'(-?\d+)([+*/-])(-?\d+)'
+UNKNOWN_ON_LEFT_PATTERN = r'x([+*/-])(\d+)'
+UNKNOWN_ON_RIGHT_PATTERN = r'(\d+)([-*])x'
+
+INVERSE_OPERATOR = {'+': '-', '-': '+', '*': '/', '/': '*'}
+OPERATOR_CATEGORY = {'+': 'addition', '-': 'subtraction',
+                     '*': 'multiplication', '/': 'division'}
+CATEGORY_ORDER = ['addition', 'subtraction', 'multiplication', 'division', 'algebra']
+
 
 def canonical_question(question):
     return re.sub(r'\s+', '', question)
 
-def arithmetic_value(expr):
-    match = re.fullmatch(r'(-?\d+)([+*/-])(-?\d+)', expr)
-    if match is None: raise ValueError(f'Unsupported arithmetic: {expr!r}')
-    a, op, b = Fraction(int(match[1])), match[2], Fraction(int(match[3]))
-    if op == '+': return a+b
-    if op == '-': return a-b
-    if op == '*': return a*b
-    if not b: raise ValueError('Division by zero')
-    return a/b
+
+def arithmetic_value(expression):
+    match = re.fullmatch(BINARY_EXPRESSION_PATTERN, expression)
+    if match is None:
+        raise ValueError(f'Unsupported arithmetic: {expression!r}')
+    left, operator, right = Fraction(int(match[1])), match[2], Fraction(int(match[3]))
+    if operator == '+':
+        return left + right
+    if operator == '-':
+        return left - right
+    if operator == '*':
+        return left * right
+    if not right:
+        raise ValueError('Division by zero')
+    return left / right
+
+
+def solve_equation(lhs, rhs):
+    match = re.fullmatch(UNKNOWN_ON_LEFT_PATTERN, lhs)
+    if match:
+        operator, operand = match[1], int(match[2])
+        if operator == '+':
+            return rhs - operand
+        if operator == '-':
+            return rhs + operand
+        if operator == '*':
+            return rhs / operand
+        return rhs * operand
+    match = re.fullmatch(UNKNOWN_ON_RIGHT_PATTERN, lhs)
+    if not match:
+        raise ValueError(f'Unsupported equation: {lhs!r}')
+    operand = int(match[1])
+    return operand - rhs if match[2] == '-' else rhs / operand
+
 
 def solve_question(question):
-    q = canonical_question(question)
-    if q.endswith(',x=?'):
-        lhs, rhs = q[:-4].split('=')
-        rhs = Fraction(int(rhs))
-        m = re.fullmatch(r'x([+*/-])(\d+)', lhs)
-        if m:
-            op, a = m[1], int(m[2])
-            if op == '+': return rhs-a
-            if op == '-': return rhs+a
-            if op == '*': return rhs/a
-            return rhs*a
-        m = re.fullmatch(r'(\d+)([-*])x', lhs)
-        if not m: raise ValueError(f'Unsupported equation: {q!r}')
-        a = int(m[1])
-        return a-rhs if m[2]=='-' else rhs/a
-    if not q.endswith('=?'): raise ValueError(q)
-    return arithmetic_value(q[:-2])
+    canonical = canonical_question(question)
+    if canonical.endswith(',x=?'):
+        lhs, rhs = canonical[:-4].split('=')
+        return solve_equation(lhs, Fraction(int(rhs)))
+    if not canonical.endswith('=?'):
+        raise ValueError(canonical)
+    return arithmetic_value(canonical[:-2])
+
+
+def parse_answer(response):
+    """Anchored parse so an explanation's divisor or operand is never read as the answer."""
+    match = re.match(ANSWER_PATTERN, response)
+    return int(match[1]) if match else None
+
+
+def expected_explanation_expression(question):
+    """The one equation that counts as showing this question's own work."""
+    canonical = canonical_question(question)
+    if not canonical.endswith(',x=?'):
+        return canonical[:-2]
+    lhs, rhs = canonical[:-4].split('=')
+    match = re.fullmatch(UNKNOWN_ON_LEFT_PATTERN, lhs)
+    if match:
+        return f'{rhs}{INVERSE_OPERATOR[match[1]]}{match[2]}'
+    match = re.fullmatch(UNKNOWN_ON_RIGHT_PATTERN, lhs)
+    return f'{match[1]}-{rhs}' if match[2] == '-' else f'{rhs}/{match[1]}'
+
+
+def classify_explanation(question, expected_answer, response):
+    """Conservative: the equality must perform this question's operation, not merely be true."""
+    match = re.fullmatch(EXPLANATION_PATTERN, response)
+    if not match:
+        return 'unparsed'
+    try:
+        equation_value = arithmetic_value(match[2])
+        relevant_expression = expected_explanation_expression(question)
+        verified = (int(match[1]) == expected_answer == equation_value == int(match[3])
+                    and match[2].replace(' ', '') == relevant_expression)
+    except (ValueError, ZeroDivisionError, TypeError):
+        return 'incorrect_or_irrelevant'
+    return 'verified' if verified else 'incorrect_or_irrelevant'
+
 
 def score_response(record):
-    # Strict, anchored answer parser: never grab the last number from an
-    # explanation (it might be a divisor, operand, or a contradictory answer).
     response = record['response'].strip()
-    match = re.match(r'^The answer is (-?\d+)(?= because |\.$|$)', response)
-    parsed = int(match[1]) if match else None
+    parsed = parse_answer(response)
     correct = parsed == record['expected_answer'] if parsed is not None else False
-    # A deliberately conservative explanation check: equality must perform the
-    # actual operation/inverse operation for this question, not just any true sum.
-    explanation = re.fullmatch(r'The answer is (-?\d+) because (.+)=(-?\d+)\.', response)
-    explanation_status = 'unparsed'
-    if explanation:
-        try:
-            equation_answer = arithmetic_value(explanation[2])
-            q = canonical_question(record['question'])
-            if q.endswith(',x=?'):
-                lhs,rhs = q[:-4].split('=')
-                m = re.fullmatch(r'x([+*/-])(\d+)', lhs)
-                if m:
-                    op,a = m[1],m[2]
-                    inverse = {'+':'-', '-':'+', '*':'/', '/':'*'}[op]
-                    relevant_expr = f'{rhs}{inverse}{a}'
-                else:
-                    m = re.fullmatch(r'(\d+)([-*])x',lhs)
-                    relevant_expr = f'{m[1]}-{rhs}' if m[2]=='-' else f'{rhs}/{m[1]}'
-            else: relevant_expr = q[:-2]
-            valid = (int(explanation[1]) == record['expected_answer'] ==
-                equation_answer == int(explanation[3]) and
-                explanation[2].replace(' ','') == relevant_expr)
-            explanation_status = 'verified' if valid else 'incorrect_or_irrelevant'
-        except (ValueError,ZeroDivisionError,TypeError):
-            explanation_status = 'incorrect_or_irrelevant'
+    explanation_status = classify_explanation(record['question'], record['expected_answer'],
+                                              response)
     return dict(record, parsed_answer=parsed, answer_correct=correct,
-        explanation_status=explanation_status,
-        fully_verified=correct and explanation_status=='verified' and not record['truncated'])
+                explanation_status=explanation_status,
+                fully_verified=(correct and explanation_status == 'verified'
+                                and not record['truncated']))
+
+
+def category_metrics(rows):
+    count = len(rows)
+    return dict(count=count,
+                answer_correct=sum(r['answer_correct'] for r in rows),
+                answer_accuracy=sum(r['answer_correct'] for r in rows) / count,
+                fully_verified=sum(r['fully_verified'] for r in rows),
+                fully_verified_accuracy=sum(r['fully_verified'] for r in rows) / count,
+                answer_unparsed=sum(r['parsed_answer'] is None for r in rows),
+                explanation_unparsed=sum(r['explanation_status'] == 'unparsed' for r in rows),
+                truncated=sum(r['truncated'] for r in rows))
+
 
 def summarize_results(results):
-    def metrics(rows):
-        n=len(rows)
-        return dict(count=n, answer_correct=sum(r['answer_correct'] for r in rows),
-            answer_accuracy=sum(r['answer_correct'] for r in rows)/n,
-            fully_verified=sum(r['fully_verified'] for r in rows),
-            fully_verified_accuracy=sum(r['fully_verified'] for r in rows)/n,
-            answer_unparsed=sum(r['parsed_answer'] is None for r in rows),
-            explanation_unparsed=sum(r['explanation_status']=='unparsed' for r in rows),
-            truncated=sum(r['truncated'] for r in rows))
-    return dict(overall=metrics(results), by_category={c:metrics([r for r in results if r['category']==c])
-        for c in sorted({r['category'] for r in results})})
+    categories = sorted({r['category'] for r in results})
+    return dict(overall=category_metrics(results),
+                by_category={category: category_metrics(
+                    [r for r in results if r['category'] == category])
+                    for category in categories})
 
 
 def question_category(question):
-    q = canonical_question(question)
-    if 'x' in q:
+    canonical = canonical_question(question)
+    if 'x' in canonical:
         return 'algebra'
-    m = re.fullmatch(r'-?\d+([+*/-])-?\d+=\?', q)
-    if not m:
+    match = re.fullmatch(r'-?\d+([+*/-])-?\d+=\?', canonical)
+    if not match:
         raise ValueError(f'Unsupported question: {question!r}')
-    return {'+':'addition','-':'subtraction','*':'multiplication','/':'division'}[m[1]]
+    return OPERATOR_CATEGORY[match[1]]
+
+
+def question_from_pair(pair):
+    if set(pair) != {'positive', 'negative'}:
+        raise ValueError('Expected positive/negative pair schema')
+    question = pair['positive'].split('?', 1)[0] + '?'
+    if not pair['negative'].startswith(question + ' '):
+        raise ValueError('Pair does not share a question')
+    return question
+
+
+def development_record(pair):
+    """Build one scored development record, rejecting any pair the oracle disagrees with."""
+    question = question_from_pair(pair)
+    answer = solve_question(question)
+    if answer.denominator != 1:
+        raise ValueError('Expected integer math solutions')
+    stated = re.match(POSITIVE_ANSWER_PATTERN, pair['positive'][len(question) + 1:])
+    if not stated or int(stated[1]) != answer:
+        raise ValueError('Positive answer disagrees with exact oracle')
+    return dict(question=question, expected_answer=int(answer),
+                category=question_category(question), split='development')
 
 
 def select_development_questions(pairs, per_category=20, seed=3003):
@@ -111,33 +178,68 @@ def select_development_questions(pairs, per_category=20, seed=3003):
     groups = defaultdict(list)
     seen = set()
     for pair in pairs:
-        if set(pair) != {'positive', 'negative'}:
-            raise ValueError('Expected positive/negative pair schema')
-        question = pair['positive'].split('?',1)[0]+'?'
-        if not pair['negative'].startswith(question+' '):
-            raise ValueError('Pair does not share a question')
-        key = canonical_question(question)
-        answer = solve_question(question)
-        if answer.denominator != 1:
-            raise ValueError('Expected integer math solutions')
-        positive_answer = re.match(r'The answer is (-?\d+) because ',pair['positive'][len(question)+1:])
-        if not positive_answer or int(positive_answer[1]) != answer:
-            raise ValueError('Positive answer disagrees with exact oracle')
+        record = development_record(pair)
+        key = canonical_question(record['question'])
         if key in seen:
             continue
         seen.add(key)
-        category = question_category(question)
-        groups[category].append(dict(question=question,expected_answer=int(answer),
-            category=category,split='development'))
+        groups[record['category']].append(record)
     rng = random.Random(seed)
     selected = []
-    for category in ['addition','subtraction','multiplication','division','algebra']:
-        choices = sorted(groups[category],key=lambda r:r['question'])
+    for category in CATEGORY_ORDER:
+        choices = sorted(groups[category], key=lambda r: r['question'])
         if len(choices) < per_category:
-            raise ValueError(f'Need {per_category} development questions for {category}; found {len(choices)}')
-        selected.extend(rng.sample(choices,per_category))
+            raise ValueError(f'Need {per_category} development questions for {category}; '
+                             f'found {len(choices)}')
+        selected.extend(rng.sample(choices, per_category))
     rng.shuffle(selected)
     return selected
+
+
+def prepare_generation_records(questions, stoi, max_new_tokens, block_size):
+    """Validate every question against the oracle and group their indices by prompt length."""
+    records = [dict(q) for q in questions]
+    groups = defaultdict(list)
+    for index, record in enumerate(records):
+        expected = solve_question(record['question'])
+        if expected.denominator != 1 or int(expected) != record['expected_answer']:
+            raise ValueError('Question/expected answer mismatch')
+        prompt = record['question'] + ' '
+        unsupported = set(prompt) - set(stoi)
+        if unsupported:
+            raise ValueError(f'Unsupported prompt characters: {unsupported}')
+        if len(prompt) + max_new_tokens > block_size:
+            raise ValueError('Generation budget exceeds context; refusing to crop')
+        groups[len(prompt)].append(index)
+    if len({canonical_question(r['question']) for r in records}) != len(records):
+        raise ValueError('Duplicate evaluation questions')
+    return records, groups
+
+
+def generate_responses(model, prompts, stoi, itos, device, max_new_tokens):
+    """Greedy decode one equal-length batch, stopping each row on newline or period."""
+    import torch
+    ids = torch.tensor([[stoi[c] for c in p] for p in prompts], dtype=torch.long, device=device)
+    active = [True] * len(prompts)
+    continuations = [''] * len(prompts)
+    reasons = ['max_new_tokens'] * len(prompts)
+    for _ in range(max_new_tokens):
+        logits, _ = model(ids)
+        next_ids = logits[:, -1, :].argmax(dim=-1)
+        for row, token in enumerate(next_ids.tolist()):
+            if not active[row]:
+                continue
+            char = itos[token]
+            if char == '\n':
+                active[row], reasons[row] = False, 'newline'
+            else:
+                continuations[row] += char
+                if char == '.':
+                    active[row], reasons[row] = False, 'period'
+        if not any(active):
+            break
+        ids = torch.cat((ids, next_ids[:, None]), dim=1)
+    return continuations, reasons
 
 
 def evaluate_generated_math(model, questions, stoi, itos, device=None,
@@ -154,58 +256,27 @@ def evaluate_generated_math(model, questions, stoi, itos, device=None,
     if not questions or batch_size < 1 or max_new_tokens < 1:
         raise ValueError('Nonempty questions and positive generation settings required')
     device = device or next(model.parameters()).device
-    groups = defaultdict(list)
-    records = [dict(q) for q in questions]
-    for i,record in enumerate(records):
-        expected = solve_question(record['question'])
-        if expected.denominator != 1 or int(expected) != record['expected_answer']:
-            raise ValueError('Question/expected answer mismatch')
-        prompt = record['question']+' '
-        unsupported = set(prompt)-set(stoi)
-        if unsupported:
-            raise ValueError(f'Unsupported prompt characters: {unsupported}')
-        if len(prompt)+max_new_tokens > model.config.block_size:
-            raise ValueError('Generation budget exceeds context; refusing to crop')
-        groups[len(prompt)].append(i)
-    if len({canonical_question(q['question']) for q in records}) != len(records):
-        raise ValueError('Duplicate evaluation questions')
-    results = [None]*len(records)
+    records, groups = prepare_generation_records(questions, stoi, max_new_tokens,
+                                                 model.config.block_size)
+    results = [None] * len(records)
     was_training = model.training
     model.eval()
     done = 0
     try:
         with torch.inference_mode():
-            for _,group in sorted(groups.items()):
-                for start in range(0,len(group),batch_size):
-                    chunk = group[start:start+batch_size]
-                    prompts = [records[i]['question']+' ' for i in chunk]
-                    ids = torch.tensor([[stoi[c] for c in p] for p in prompts],dtype=torch.long,device=device)
-                    active = [True]*len(chunk)
-                    continuations = ['']*len(chunk)
-                    reasons = ['max_new_tokens']*len(chunk)
-                    for _ in range(max_new_tokens):
-                        logits,_ = model(ids)
-                        next_ids = logits[:,-1,:].argmax(dim=-1)
-                        for j,t in enumerate(next_ids.tolist()):
-                            if not active[j]:
-                                continue
-                            char = itos[t]
-                            if char=='\n':
-                                active[j],reasons[j] = False,'newline'
-                            else:
-                                continuations[j] += char
-                                if char=='.':
-                                    active[j],reasons[j] = False,'period'
-                        if not any(active):
-                            break
-                        ids = torch.cat((ids,next_ids[:,None]),dim=1)
-                    for i,text,reason in zip(chunk,continuations,reasons):
-                        raw = dict(records[i],response=text,stop_reason=reason,
-                                   truncated=reason=='max_new_tokens')
-                        results[i] = score_response(raw)
+            for _, group in sorted(groups.items()):
+                for start in range(0, len(group), batch_size):
+                    chunk = group[start:start + batch_size]
+                    prompts = [records[i]['question'] + ' ' for i in chunk]
+                    continuations, reasons = generate_responses(model, prompts, stoi, itos,
+                                                                device, max_new_tokens)
+                    for index, text, reason in zip(chunk, continuations, reasons):
+                        raw = dict(records[index], response=text, stop_reason=reason,
+                                   truncated=reason == 'max_new_tokens')
+                        results[index] = score_response(raw)
                     done += len(chunk)
                     if progress:
-                        print(f'Generated {done}/{len(records)} answers',flush=True)
+                        print(f'Generated {done}/{len(records)} answers', flush=True)
     finally:
         model.train(was_training)
-    return dict(summary=summarize_results(results),results=results)
+    return dict(summary=summarize_results(results), results=results)

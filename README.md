@@ -1,32 +1,10 @@
 # SC3000 / CZ3005 — Teaching NanoGPT to Do Math
 
-> **Start here:** [dpo/dpo.ipynb](dpo/dpo.ipynb)
->
-> **Final model:** [dpo/dpo.pt](dpo/dpo.pt)
->
-> **Fresh held-out result:** **79/100** (greedy decoding; 20 questions per category)
+**Start here:** [dpo/dpo.ipynb](dpo/dpo.ipynb) · **Final model:** [dpo/dpo.pt](dpo/dpo.pt)
 
-The notebook is the complete submission entry point: Tasks 1–3 implementation, explanations, saved outputs and failure analysis. You do not need to read the optional Python scripts to assess the project. The supplied `model.py` and `configurator.py` are unchanged.
+We trained the supplied NanoGPT on worked math solutions, then applied DPO. The final model answered **79/100 fresh test questions correctly** using greedy decoding, with 20 questions per category.
 
-## Examiner's guide
-
-1. Open **`dpo/dpo.ipynb`** to inspect the saved dataset checks, recorded training curves and all generated test answers without running anything.
-2. To verify the result, follow **Run the notebook** below and run all cells. Default execution does not repeat the long training run or overwrite the final model.
-3. Use **`dpo/task3_final_summary.json`** for compact scores and **`dpo/task3_final_results.json`** for every prediction. Development accuracy is reported separately from the fresh test.
-4. Ignore **`archive/`** when grading final results. It preserves an old checkpoint and superseded diagnostics, excluded from the submission ZIP.
-
-## Which files matter?
-
-| Group | Files | Purpose |
-|---|---|---|
-| **Main deliverables** | `dpo/dpo.ipynb`, `dpo/dpo.pt`, `dpo/pos_neg_pairs.json` | Complete notebook, final weights and 100,000 training pairs |
-| **Required notebook assets** | `model.py`, `configurator.py`, `sft/meta.pkl`, actual `sft/gpt.pt` | Supplied architecture, vocabulary and pretrained weights; a Git LFS pointer is insufficient |
-| **Required notebook data** | `dpo/task1_dev_pairs.json`, `dpo/task2_history.json`, `dpo/task2_sft_history.json`, `dpo/task3_fresh_test_questions.json`, `dpo/task3_previous_test_questions.json` | Separate development data, recorded real training histories and frozen evaluation questions |
-| **Final evidence** | `dpo/task1_validation.json`, `dpo/task3_final_results.json`, `dpo/task3_final_summary.json`, `dpo/task2_*.png` | Validation, predictions, scores and training plots |
-| **Setup and packaging** | `requirements.txt`, `VALIDATION_ENVIRONMENT.json`, `package_submission.py` | Tested environment, execution checks and focused ZIP creation |
-| **Optional support** | `dpo/train_dpo.py`, `dpo/evaluate_task3.py`, `dpo/math_evaluation.py`, `dpo/TASK3_HANDOFF.md` | Command-line alternatives and integration notes; implementation is already embedded in the notebook |
-| **Regenerable metadata** | `dpo/task1_metadata.json` | Per-pair provenance created by the notebook; ignored in Git and not a required input |
-| **Archived — not final results** | `archive/` | Preserved historical checkpoint and diagnostic reports |
+The notebook contains the dataset generation, training, evaluation and discussion. The supplied `model.py` and `configurator.py` are unchanged.
 
 ## Team contributions
 
@@ -36,9 +14,20 @@ The notebook is the complete submission entry point: Tasks 1–3 implementation,
 | Aryan Dutt | Task 2 — training and monitoring |
 | Harsh Kamdar | Task 3 — evaluation and analysis |
 
+## Files
+
+| Group | Files |
+|---|---|
+| Main submission | `dpo/dpo.ipynb`, `dpo/dpo.pt`, `dpo/pos_neg_pairs.json` |
+| Required assets and data | `model.py`, `configurator.py`, `sft/`, development pairs, both training-history JSON files and both frozen test-question JSON files in `dpo/` |
+| Results | `dpo/task1_validation.json`, `dpo/task3_final_summary.json`, `dpo/task3_final_results.json`, training plots |
+| Optional tools | `dpo/train_dpo.py`, `dpo/evaluate_task3.py`, `dpo/math_evaluation.py`, `package_submission.py` |
+
+`archive/` contains superseded checkpoints and reports, excluded from the submission package.
+
 ## Run the notebook
 
-Use Python 3.12 and install `requirements.txt` into the environment used by the notebook kernel. Exact versions used for validation are pinned; `VALIDATION_ENVIRONMENT.json` records them.
+Use Python 3.12. Pinned dependencies are in `requirements.txt`; the tested environment is recorded in `VALIDATION_ENVIRONMENT.json`.
 
 ```bash
 python3 -m venv .venv
@@ -47,63 +36,26 @@ python -m pip install -r requirements.txt
 python -m ipykernel install --user --name sc3000-math --display-name "SC3000 Math"
 ```
 
-Open `dpo/dpo.ipynb` in your Jupyter application, select that kernel, and run all cells. Either the project root or `dpo/` is a valid working directory.
+Open `dpo/dpo.ipynb`, select that kernel and run all cells. The working directory can be the project root or `dpo/`.
 
-Default controls:
+**Default execution** evaluates the supplied final model, regenerates and validates the dataset, runs small training checks and displays recorded training curves. It does not repeat the full training run or overwrite the final model. CPU is the default evaluation device.
 
-- `RUN_FULL_TRAINING=False`: regenerate/validate the same dataset, run small pipeline smoke tests, display recorded long-run training histories, and freshly evaluate the provided final checkpoint. It does not overwrite `dpo/dpo.pt`.
-- `RUN_TRAINING_SMOKE=True`: real one-epoch tiny-model SFT and DPO checks on 512 pairs. Their scores are not the project's final performance.
-- `RUN_OPTIONAL_NEGATIVE_SMOKE=True`: exercise the actual supplied NanoGPT generation interface on two questions. The submitted preference dataset remains entirely synthetic.
-- `EVAL_DEVICE='cpu'`: reference decoding environment; CUDA/MPS can be selected explicitly.
+**Full reproduction:** set `RUN_FULL_TRAINING=True` to run 20 supervised warm-up epochs followed by 5 DPO epochs. New checkpoints are written to `runs/notebook_reproduction/`. Hyperparameters and training stages are explained in the notebook.
 
-The normal run is designed for quick review. The notebook clearly labels recorded training figures instead of claiming the 20+5-epoch job was rerun during submission checks.
+The pretrained checkpoint uses Git LFS. After cloning, run `git lfs pull`. GitHub ZIP downloads may contain a pointer instead of the weights; the notebook requires the actual checkpoint.
 
-### Checkpoint files and Git LFS
+## Dataset and results
 
-A GitHub ZIP download may contain only a small LFS pointer for `sft/gpt.pt`. A pointer is not a checkpoint. From a Git clone, install Git LFS and run `git lfs pull`; alternatively obtain the supplied actual weights. The notebook and packager reject pointers with a clear message. The final submission ZIP built by `package_submission.py` includes real weights, so its extracted copy needs no LFS access.
+The training dataset has 100,000 pairs, balanced across addition, subtraction, multiplication, exact division and algebra, plus 500 separate development pairs. It contains **100,000 distinct question strings and 71,547 whitespace-normalised questions**. Spacing variants account for the difference; these are not additional mathematical problems. Positives use exact arithmetic; submitted negatives are synthetic.
 
-## Training method and reproduction
+| Evaluation | Correct |
+|---|---:|
+| Fresh test, separate from training and development | **79/100** |
+| Development subset used during training | **80/100** |
 
-Task 1 contains 100,000 pairs, 20,000 per category, plus 500 separate development pairs. Positives use exact arithmetic and short worked equalities. Synthetic negatives and the optional, conservatively filtered model-negative path are identified separately. Schema, character vocabulary, complete sequence length, label correctness and duplicates are validated.
+Multiplication was weakest at 8/20. The combined pipeline works, but best SFT development accuracy was 81% versus 80% after DPO: this experiment does not demonstrate an additional accuracy gain from DPO. Full predictions, category scores and failure analysis are in the notebook and results JSON files. The fresh-test score does not guarantee the examiner's private-test result.
 
-The successful run used positive-response supervised learning for **20 epochs at lr 0.001**, followed by **5 DPO epochs at lr 0.0001 and lambda_sft 1.0**. Policy and frozen reference start from the selected math-SFT checkpoint. Generated development accuracy, rather than preference accuracy alone, selects checkpoints. Token-mean response-only log probabilities, true-length masks, AdamW, warm-up/cosine scheduling and gradient clipping are documented in the notebook.
-
-To reproduce the long run, set `RUN_FULL_TRAINING=True` in the notebook. It writes into a new `runs/notebook_reproduction/` directory. Existing experimental outputs are protected from overwrite. The submitted final checkpoint remains unchanged.
-
-Equivalent optional CLI commands, from the root:
-
-```bash
-python dpo/train_dpo.py --objective sft --checkpoint sft/gpt.pt --lr 0.001 --epochs 20 --out runs/reproduction/math_sft/sft.pt
-python dpo/train_dpo.py --objective dpo --checkpoint runs/reproduction/math_sft/sft_generated_best.pt --lambda-sft 1.0 --lr 0.0001 --epochs 5 --out runs/reproduction/sft_then_dpo/dpo.pt
-```
-
-Historical absolute paths in the recorded JSON logs describe the original training machine; they are not used by these reproduction commands. The old alternative is preserved at `archive/checkpoints/dpo_best.pt`; it is not selected by the final notebook or included in the submission ZIP.
-
-## Evaluated results
-
-Reference run: actual final `dpo/dpo.pt`, greedy decoding, CPU, PyTorch 2.14.1.
-
-| Set | Correct | Interpretation |
-|---|---:|---|
-| Fresh frozen benchmark | **79/100** | 20/category, seed 20261106; excluded normalized training, development and old-benchmark questions |
-| Previous benchmark | 85/100 | Diagnostic; the old model scored 12/100 on these same questions |
-| Development subset | 80/100 | Used during training/selection; not an independent final score |
-| Supplied unique examples | 4/5 | Reported separately, with exposure labels |
-
-Fresh categories: addition 20/20, subtraction 19/20, multiplication 8/20, exact division 15/20, algebra 17/20. Fully verified explanation accuracy is also 79/100. No responses were unparsed or truncated. Frozen question JSON, all predictions, checkpoint/data hashes and summaries are supplied in `dpo/task3_final_results.json` and `dpo/task3_final_summary.json`.
-
-All questions/settings were fixed before first inference. No failures were removed or regenerated. Equivalent calculations can still occur across distinct question forms. Multiplication remains weak; a carry-related explanation is a hypothesis, not a proven mechanism. These results do not guarantee the TA's private-test score. SFT's best development score was 81% and DPO's was 80%; this experiment does not demonstrate an accuracy advantage from the DPO stage alone.
-
-Optional standalone evaluation defaults to the frozen benchmark:
-
-```bash
-python dpo/evaluate_task3.py --checkpoint dpo/dpo.pt --device cpu
-python dpo/evaluate_task3.py --checkpoint dpo/dpo.pt --development --device cpu
-```
-
-The CLI writes `dpo/task3_cli_results.json`, separate from notebook results. See `dpo/TASK3_HANDOFF.md` for reuse during training. The earlier development-only report is preserved at `archive/reports/task3_generation_results.json`. It is superseded by the consolidated final reports and is not the fresh-test score.
-
-## Build the submission
+## Package the submission
 
 After running and saving the notebook:
 
@@ -111,8 +63,8 @@ After running and saving the notebook:
 python package_submission.py --out YOUR_TEAM_NAME.zip
 ```
 
-The packager checks complete notebook execution, errors, required files, actual checkpoint bytes, preference count/schema and result/checkpoint consistency. It writes a SHA256 manifest and verifies every archived payload. By default, the ZIP contains the notebook, its required assets/data, environment instructions and final evidence. It excludes `archive/`, experiments, caches, the optional CLI scripts/handoff and bulky regenerable per-pair metadata. All training/scoring code remains embedded in the notebook. Use `--include-support` if you also want the optional CLI scripts, handoff and regenerated per-pair metadata. Use `--check-only` to validate inputs and inspect the file list **without creating a ZIP**. Rename to the actual team name. The assignment's stated deadline is 11:59 pm Singapore time on 6 November 2026.
+The packager checks execution, required files, checkpoints and result consistency. Use `--check-only` to validate without creating a ZIP, or `--include-support` to include optional tools and regenerated metadata.
 
-## Sources
+## References
 
-Sources: supplied SC3000/CZ3005 assignment; [NanoGPT-Math](https://github.com/zhouyuan888888/NanoGPT-Math); [NanoGPT](https://github.com/karpathy/nanoGPT); [Rafailov et al., DPO](https://arxiv.org/abs/2305.18290). PyTorch, NumPy, Matplotlib and Python Fraction arithmetic support the implementation. Team members should review and understand the submitted work.
+Supplied SC3000/CZ3005 assignment; [NanoGPT-Math](https://github.com/zhouyuan888888/NanoGPT-Math); [NanoGPT](https://github.com/karpathy/nanoGPT); [Rafailov et al., DPO](https://arxiv.org/abs/2305.18290).

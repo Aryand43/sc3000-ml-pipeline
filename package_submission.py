@@ -20,7 +20,7 @@ EVIDENCE_FILES = [
 ]
 SUPPORT_FILES = [
     'dpo/train_dpo.py', 'dpo/math_evaluation.py', 'dpo/evaluate_task3.py',
-    'dpo/TASK3_HANDOFF.md', 'dpo/task1_metadata.json',
+    'dpo/task1_metadata.json',
 ]
 
 

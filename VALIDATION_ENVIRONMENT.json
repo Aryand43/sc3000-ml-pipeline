@@ -22,5 +22,5 @@
     "fresh_accuracy": "79/100",
     "recorded_long_training_reexecuted": false
   },
-  "final_notebook_edit": "Markdown-only wording edit; executed code cells and saved outputs unchanged."
+  "final_notebook_edit": "Presentation cells reorganised at function boundaries; executable AST preserved except an added diversity-count check. All cells reexecuted in a fresh kernel after these edits."
 }

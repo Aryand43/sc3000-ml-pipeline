@@ -85,6 +85,6 @@ python package_submission.py --out YOUR_TEAM_NAME.zip
 
 The packager checks complete notebook execution, errors, required files, actual checkpoint bytes, preference count/schema and result/checkpoint consistency. It writes a SHA256 manifest and verifies every archived payload. The ZIP includes the notebook, datasets, full original and final weights, model/vocabulary, training histories, code, figures and evaluation outputs; it excludes experiments and caches. Rename to the actual team name. The assignment's stated deadline is 11:59 pm Singapore time on 6 November 2026.
 
-## Sources and assistance
+## Sources
 
-Sources: supplied SC3000/CZ3005 assignment; [NanoGPT-Math](https://github.com/zhouyuan888888/NanoGPT-Math); [NanoGPT](https://github.com/karpathy/nanoGPT); [Rafailov et al., DPO](https://arxiv.org/abs/2305.18290). PyTorch, NumPy, Matplotlib and Python Fraction arithmetic support the implementation. OpenAI Codex assisted with code, explanations and validation under the professor's stated permission. Team members should review and understand the submitted work.
+Sources: supplied SC3000/CZ3005 assignment; [NanoGPT-Math](https://github.com/zhouyuan888888/NanoGPT-Math); [NanoGPT](https://github.com/karpathy/nanoGPT); [Rafailov et al., DPO](https://arxiv.org/abs/2305.18290). PyTorch, NumPy, Matplotlib and Python Fraction arithmetic support the implementation. Team members should review and understand the submitted work.

@@ -1,0 +1,26 @@
+{
+  "python": "3.12.7 | packaged by Anaconda, Inc. | (main, Oct  4 2024, 08:22:19) [Clang 14.0.6 ]",
+  "packages": {
+    "torch": "2.14.1",
+    "numpy": "1.26.4",
+    "matplotlib": "3.9.2",
+    "tqdm": "4.66.5",
+    "ipykernel": "6.28.0",
+    "nbformat": "5.10.4",
+    "nbclient": "0.8.0"
+  },
+  "notebook": "Executed all cells in a fresh Jupyter kernel; full training disabled, tiny training smoke enabled",
+  "checkpoint_sha256": "7ee2ada8e5824a39cae2b48a93a59527e9e39ff7619c0586f69c2cadd66dd194",
+  "checks": {
+    "clean_jupyter_kernel": "passed",
+    "extracted_zip_clean_kernel": "passed",
+    "all_100_cli_predictions_match_notebook": "passed",
+    "sft_and_dpo_tiny_optimization": "passed",
+    "real_nanogpt_negative_interface_two_question_smoke": "passed",
+    "unchanged_final_checkpoint_and_original_model_sources": "passed",
+    "full_pretrained_weights_match_original_lfs_sha256": "passed",
+    "fresh_accuracy": "79/100",
+    "recorded_long_training_reexecuted": false
+  },
+  "final_notebook_edit": "Markdown-only wording edit; executed code cells and saved outputs unchanged."
+}

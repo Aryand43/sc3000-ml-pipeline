@@ -2,3 +2,9 @@ __pycache__/
 .ipynb_checkpoints/
 dpo/smoke_dpo*.pt
 runs/
+.venv*/
+*.zip
+*.zip.tmp
+dpo/task1_model_cache.json
+dpo/task1_metadata.json
+dpo/task3_cli_results.json

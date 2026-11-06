@@ -1,7 +1,7 @@
 """Run generation accuracy from the project root: python dpo/evaluate_task3.py.
 
-Defaults to a DEVELOPMENT evaluation of dpo.pt. Frozen diagnostic questions can
-be passed with --questions; use a genuinely untouched set for final reporting.
+Defaults to the frozen held-out benchmark evaluated on 6 November 2026.
+Use --development for checkpoint-selection questions; --questions accepts another frozen set.
 """
 import argparse
 import hashlib
@@ -19,7 +19,8 @@ def main():
     parser.add_argument('--checkpoint',type=Path,default=root/'dpo/dpo.pt')
     parser.add_argument('--dev-pairs',type=Path,default=root/'dpo/task1_dev_pairs.json')
     parser.add_argument('--questions',type=Path,help='JSON list of frozen question/expected_answer/category records')
-    parser.add_argument('--out',type=Path,default=root/'dpo/task3_generation_results.json')
+    parser.add_argument('--development',action='store_true',help='Evaluate the development subset used during training, not the frozen test')
+    parser.add_argument('--out',type=Path,default=root/'dpo/task3_cli_results.json')
     parser.add_argument('--per-category',type=int,default=20)
     parser.add_argument('--batch-size',type=int,default=16)
     parser.add_argument('--max-new-tokens',type=int,default=64)
@@ -45,18 +46,26 @@ def main():
     model.load_state_dict({k.removeprefix('_orig_mod.'):v for k,v in state.items()},strict=True)
     assert model.config.vocab_size == len(meta['stoi'])
     model.to(device).eval()
+    if args.questions and args.development:
+        parser.error('--questions and --development are mutually exclusive')
     if args.questions:
         questions = json.loads(args.questions.read_text())
         source = str(args.questions)
-    else:
+    elif args.development:
         pairs = json.loads(args.dev_pairs.read_text())
         questions = select_development_questions(pairs,args.per_category,args.seed)
         source = str(args.dev_pairs)
+    else:
+        frozen = root/'dpo/task3_fresh_test_questions.json'
+        questions = json.loads(frozen.read_text())
+        source = str(frozen)
+    print('Question source:',source)
+    print('Development evaluation:',args.development)
     output = evaluate_generated_math(model,questions,meta['stoi'],meta['itos'],device,
         args.batch_size,args.max_new_tokens,progress=True)
     output['provenance'] = dict(checkpoint=str(args.checkpoint),epoch=checkpoint.get('epoch'),
         checkpoint_sha256=hashlib.sha256(args.checkpoint.read_bytes()).hexdigest(),
-        question_source=source,seed=args.seed,decoding='greedy',device=device,
+        question_source=source,development_evaluation=args.development,seed=args.seed,decoding='greedy',device=device,
         torch_version=torch.__version__,batch_size=args.batch_size,max_new_tokens=args.max_new_tokens)
     args.out.parent.mkdir(parents=True,exist_ok=True)
     temporary = args.out.with_suffix(args.out.suffix+'.tmp')

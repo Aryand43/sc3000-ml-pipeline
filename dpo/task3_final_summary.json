@@ -1,0 +1,237 @@
+{
+  "provenance": {
+    "checkpoint": "dpo/dpo.pt",
+    "checkpoint_sha256": "7ee2ada8e5824a39cae2b48a93a59527e9e39ff7619c0586f69c2cadd66dd194",
+    "epoch": 5,
+    "device": "cpu",
+    "torch_version": "2.14.1",
+    "decoding": "greedy",
+    "batch_size": 16,
+    "max_new_tokens": 64,
+    "fresh_seed": 20261106,
+    "old_benchmark_seed": 3003,
+    "training_sha256": "65963aa362bc7c0fb18c5faa711018329dcb86ef94f36f80891e753a311c3731",
+    "development_sha256": "ec9c7735e81ae30c5791482506a66b5e1ed20fc08b743fdf4cfb21d903b23f6c",
+    "normalized_training_overlap": 0,
+    "normalized_development_overlap": 0,
+    "normalized_old_benchmark_overlap": 0
+  },
+  "evaluations": {
+    "fresh_test": {
+      "overall": {
+        "count": 100,
+        "answer_correct": 79,
+        "answer_accuracy": 0.79,
+        "fully_verified": 79,
+        "fully_verified_accuracy": 0.79,
+        "answer_unparsed": 0,
+        "explanation_unparsed": 0,
+        "truncated": 0
+      },
+      "by_category": {
+        "addition": {
+          "count": 20,
+          "answer_correct": 20,
+          "answer_accuracy": 1.0,
+          "fully_verified": 20,
+          "fully_verified_accuracy": 1.0,
+          "answer_unparsed": 0,
+          "explanation_unparsed": 0,
+          "truncated": 0
+        },
+        "algebra": {
+          "count": 20,
+          "answer_correct": 17,
+          "answer_accuracy": 0.85,
+          "fully_verified": 17,
+          "fully_verified_accuracy": 0.85,
+          "answer_unparsed": 0,
+          "explanation_unparsed": 0,
+          "truncated": 0
+        },
+        "division": {
+          "count": 20,
+          "answer_correct": 15,
+          "answer_accuracy": 0.75,
+          "fully_verified": 15,
+          "fully_verified_accuracy": 0.75,
+          "answer_unparsed": 0,
+          "explanation_unparsed": 0,
+          "truncated": 0
+        },
+        "multiplication": {
+          "count": 20,
+          "answer_correct": 8,
+          "answer_accuracy": 0.4,
+          "fully_verified": 8,
+          "fully_verified_accuracy": 0.4,
+          "answer_unparsed": 0,
+          "explanation_unparsed": 0,
+          "truncated": 0
+        },
+        "subtraction": {
+          "count": 20,
+          "answer_correct": 19,
+          "answer_accuracy": 0.95,
+          "fully_verified": 19,
+          "fully_verified_accuracy": 0.95,
+          "answer_unparsed": 0,
+          "explanation_unparsed": 0,
+          "truncated": 0
+        }
+      }
+    },
+    "previous_benchmark": {
+      "overall": {
+        "count": 100,
+        "answer_correct": 85,
+        "answer_accuracy": 0.85,
+        "fully_verified": 85,
+        "fully_verified_accuracy": 0.85,
+        "answer_unparsed": 0,
+        "explanation_unparsed": 0,
+        "truncated": 0
+      },
+      "by_category": {
+        "addition": {
+          "count": 20,
+          "answer_correct": 20,
+          "answer_accuracy": 1.0,
+          "fully_verified": 20,
+          "fully_verified_accuracy": 1.0,
+          "answer_unparsed": 0,
+          "explanation_unparsed": 0,
+          "truncated": 0
+        },
+        "algebra": {
+          "count": 20,
+          "answer_correct": 19,
+          "answer_accuracy": 0.95,
+          "fully_verified": 19,
+          "fully_verified_accuracy": 0.95,
+          "answer_unparsed": 0,
+          "explanation_unparsed": 0,
+          "truncated": 0
+        },
+        "division": {
+          "count": 20,
+          "answer_correct": 18,
+          "answer_accuracy": 0.9,
+          "fully_verified": 18,
+          "fully_verified_accuracy": 0.9,
+          "answer_unparsed": 0,
+          "explanation_unparsed": 0,
+          "truncated": 0
+        },
+        "multiplication": {
+          "count": 20,
+          "answer_correct": 10,
+          "answer_accuracy": 0.5,
+          "fully_verified": 10,
+          "fully_verified_accuracy": 0.5,
+          "answer_unparsed": 0,
+          "explanation_unparsed": 0,
+          "truncated": 0
+        },
+        "subtraction": {
+          "count": 20,
+          "answer_correct": 18,
+          "answer_accuracy": 0.9,
+          "fully_verified": 18,
+          "fully_verified_accuracy": 0.9,
+          "answer_unparsed": 0,
+          "explanation_unparsed": 0,
+          "truncated": 0
+        }
+      }
+    },
+    "development": {
+      "overall": {
+        "count": 100,
+        "answer_correct": 80,
+        "answer_accuracy": 0.8,
+        "fully_verified": 80,
+        "fully_verified_accuracy": 0.8,
+        "answer_unparsed": 0,
+        "explanation_unparsed": 0,
+        "truncated": 0
+      },
+      "by_category": {
+        "addition": {
+          "count": 20,
+          "answer_correct": 20,
+          "answer_accuracy": 1.0,
+          "fully_verified": 20,
+          "fully_verified_accuracy": 1.0,
+          "answer_unparsed": 0,
+          "explanation_unparsed": 0,
+          "truncated": 0
+        },
+        "algebra": {
+          "count": 20,
+          "answer_correct": 15,
+          "answer_accuracy": 0.75,
+          "fully_verified": 15,
+          "fully_verified_accuracy": 0.75,
+          "answer_unparsed": 0,
+          "explanation_unparsed": 0,
+          "truncated": 0
+        },
+        "division": {
+          "count": 20,
+          "answer_correct": 17,
+          "answer_accuracy": 0.85,
+          "fully_verified": 17,
+          "fully_verified_accuracy": 0.85,
+          "answer_unparsed": 0,
+          "explanation_unparsed": 0,
+          "truncated": 0
+        },
+        "multiplication": {
+          "count": 20,
+          "answer_correct": 9,
+          "answer_accuracy": 0.45,
+          "fully_verified": 9,
+          "fully_verified_accuracy": 0.45,
+          "answer_unparsed": 0,
+          "explanation_unparsed": 0,
+          "truncated": 0
+        },
+        "subtraction": {
+          "count": 20,
+          "answer_correct": 19,
+          "answer_accuracy": 0.95,
+          "fully_verified": 19,
+          "fully_verified_accuracy": 0.95,
+          "answer_unparsed": 0,
+          "explanation_unparsed": 0,
+          "truncated": 0
+        }
+      }
+    },
+    "assignment_examples": {
+      "overall": {
+        "count": 5,
+        "answer_correct": 4,
+        "answer_accuracy": 0.8,
+        "fully_verified": 4,
+        "fully_verified_accuracy": 0.8,
+        "answer_unparsed": 0,
+        "explanation_unparsed": 0,
+        "truncated": 0
+      },
+      "by_category": {
+        "assignment_examples": {
+          "count": 5,
+          "answer_correct": 4,
+          "answer_accuracy": 0.8,
+          "fully_verified": 4,
+          "fully_verified_accuracy": 0.8,
+          "answer_unparsed": 0,
+          "explanation_unparsed": 0,
+          "truncated": 0
+        }
+      }
+    }
+  }
+}

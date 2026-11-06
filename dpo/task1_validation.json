@@ -1,0 +1,30 @@
+{
+  "pair_count": 100000,
+  "category_counts": {
+    "division": 20000,
+    "addition": 20000,
+    "subtraction": 20000,
+    "algebra": 20000,
+    "multiplication": 20000
+  },
+  "origins": {
+    "synthetic": 100000
+  },
+  "negative_types": {
+    "wrong_operation": 29477,
+    "offset_error": 30411,
+    "sign_error": 30036,
+    "unhelpful": 10076
+  },
+  "max_length_including_four_newlines": 62,
+  "duplicate_questions": 0,
+  "duplicate_pairs": 0,
+  "unsupported_characters": 0,
+  "identical_responses": 0,
+  "dev_overlap": 0,
+  "model_context_limit": 256,
+  "context_validation": "checkpoint header inspected; model forward not executed",
+  "dataset_sha256": "65963aa362bc7c0fb18c5faa711018329dcb86ef94f36f80891e753a311c3731",
+  "development_pairs": 500,
+  "model_generation_executed": false
+}

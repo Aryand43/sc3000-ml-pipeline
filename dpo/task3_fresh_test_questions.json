@@ -1,0 +1,702 @@
+[
+  {
+    "question": "828/36=?",
+    "expected_answer": 23,
+    "category": "division",
+    "subtype": "division",
+    "split": "fresh_test_2026_11_06"
+  },
+  {
+    "question": "88*84=?",
+    "expected_answer": 7392,
+    "category": "multiplication",
+    "subtype": "multiplication",
+    "split": "fresh_test_2026_11_06"
+  },
+  {
+    "question": "38*x=-38,x=?",
+    "expected_answer": -1,
+    "category": "algebra",
+    "subtype": "a*x=b",
+    "split": "fresh_test_2026_11_06"
+  },
+  {
+    "question": "x/91=67,x=?",
+    "expected_answer": 6097,
+    "category": "algebra",
+    "subtype": "x/a=b",
+    "split": "fresh_test_2026_11_06"
+  },
+  {
+    "question": "378/9=?",
+    "expected_answer": 42,
+    "category": "division",
+    "subtype": "division",
+    "split": "fresh_test_2026_11_06"
+  },
+  {
+    "question": "38+178=?",
+    "expected_answer": 216,
+    "category": "addition",
+    "subtype": "addition",
+    "split": "fresh_test_2026_11_06"
+  },
+  {
+    "question": "49-x=-18,x=?",
+    "expected_answer": 67,
+    "category": "algebra",
+    "subtype": "a-x=b",
+    "split": "fresh_test_2026_11_06"
+  },
+  {
+    "question": "143-39=?",
+    "expected_answer": 104,
+    "category": "subtraction",
+    "subtype": "subtraction",
+    "split": "fresh_test_2026_11_06"
+  },
+  {
+    "question": "87+116=?",
+    "expected_answer": 203,
+    "category": "addition",
+    "subtype": "addition",
+    "split": "fresh_test_2026_11_06"
+  },
+  {
+    "question": "96-157=?",
+    "expected_answer": -61,
+    "category": "subtraction",
+    "subtype": "subtraction",
+    "split": "fresh_test_2026_11_06"
+  },
+  {
+    "question": "59*x=-3422,x=?",
+    "expected_answer": -58,
+    "category": "algebra",
+    "subtype": "a*x=b",
+    "split": "fresh_test_2026_11_06"
+  },
+  {
+    "question": "25+0=?",
+    "expected_answer": 25,
+    "category": "addition",
+    "subtype": "addition",
+    "split": "fresh_test_2026_11_06"
+  },
+  {
+    "question": "62*43=?",
+    "expected_answer": 2666,
+    "category": "multiplication",
+    "subtype": "multiplication",
+    "split": "fresh_test_2026_11_06"
+  },
+  {
+    "question": "119-9=?",
+    "expected_answer": 110,
+    "category": "subtraction",
+    "subtype": "subtraction",
+    "split": "fresh_test_2026_11_06"
+  },
+  {
+    "question": "175+180=?",
+    "expected_answer": 355,
+    "category": "addition",
+    "subtype": "addition",
+    "split": "fresh_test_2026_11_06"
+  },
+  {
+    "question": "x+40=124,x=?",
+    "expected_answer": 84,
+    "category": "algebra",
+    "subtype": "x+a=b",
+    "split": "fresh_test_2026_11_06"
+  },
+  {
+    "question": "115+86=?",
+    "expected_answer": 201,
+    "category": "addition",
+    "subtype": "addition",
+    "split": "fresh_test_2026_11_06"
+  },
+  {
+    "question": "1620/20=?",
+    "expected_answer": 81,
+    "category": "division",
+    "subtype": "division",
+    "split": "fresh_test_2026_11_06"
+  },
+  {
+    "question": "60+168=?",
+    "expected_answer": 228,
+    "category": "addition",
+    "subtype": "addition",
+    "split": "fresh_test_2026_11_06"
+  },
+  {
+    "question": "x+22=73,x=?",
+    "expected_answer": 51,
+    "category": "algebra",
+    "subtype": "x+a=b",
+    "split": "fresh_test_2026_11_06"
+  },
+  {
+    "question": "1-141=?",
+    "expected_answer": -140,
+    "category": "subtraction",
+    "subtype": "subtraction",
+    "split": "fresh_test_2026_11_06"
+  },
+  {
+    "question": "69-138=?",
+    "expected_answer": -69,
+    "category": "subtraction",
+    "subtype": "subtraction",
+    "split": "fresh_test_2026_11_06"
+  },
+  {
+    "question": "395/79=?",
+    "expected_answer": 5,
+    "category": "division",
+    "subtype": "division",
+    "split": "fresh_test_2026_11_06"
+  },
+  {
+    "question": "11*65=?",
+    "expected_answer": 715,
+    "category": "multiplication",
+    "subtype": "multiplication",
+    "split": "fresh_test_2026_11_06"
+  },
+  {
+    "question": "29*64=?",
+    "expected_answer": 1856,
+    "category": "multiplication",
+    "subtype": "multiplication",
+    "split": "fresh_test_2026_11_06"
+  },
+  {
+    "question": "22-75=?",
+    "expected_answer": -53,
+    "category": "subtraction",
+    "subtype": "subtraction",
+    "split": "fresh_test_2026_11_06"
+  },
+  {
+    "question": "x/51=90,x=?",
+    "expected_answer": 4590,
+    "category": "algebra",
+    "subtype": "x/a=b",
+    "split": "fresh_test_2026_11_06"
+  },
+  {
+    "question": "50*74=?",
+    "expected_answer": 3700,
+    "category": "multiplication",
+    "subtype": "multiplication",
+    "split": "fresh_test_2026_11_06"
+  },
+  {
+    "question": "x/16=-94,x=?",
+    "expected_answer": -1504,
+    "category": "algebra",
+    "subtype": "x/a=b",
+    "split": "fresh_test_2026_11_06"
+  },
+  {
+    "question": "38-33=?",
+    "expected_answer": 5,
+    "category": "subtraction",
+    "subtype": "subtraction",
+    "split": "fresh_test_2026_11_06"
+  },
+  {
+    "question": "3+74=?",
+    "expected_answer": 77,
+    "category": "addition",
+    "subtype": "addition",
+    "split": "fresh_test_2026_11_06"
+  },
+  {
+    "question": "6240/65=?",
+    "expected_answer": 96,
+    "category": "division",
+    "subtype": "division",
+    "split": "fresh_test_2026_11_06"
+  },
+  {
+    "question": "13+131=?",
+    "expected_answer": 144,
+    "category": "addition",
+    "subtype": "addition",
+    "split": "fresh_test_2026_11_06"
+  },
+  {
+    "question": "x+69=40,x=?",
+    "expected_answer": -29,
+    "category": "algebra",
+    "subtype": "x+a=b",
+    "split": "fresh_test_2026_11_06"
+  },
+  {
+    "question": "92+74=?",
+    "expected_answer": 166,
+    "category": "addition",
+    "subtype": "addition",
+    "split": "fresh_test_2026_11_06"
+  },
+  {
+    "question": "36*85=?",
+    "expected_answer": 3060,
+    "category": "multiplication",
+    "subtype": "multiplication",
+    "split": "fresh_test_2026_11_06"
+  },
+  {
+    "question": "65*x=-6305,x=?",
+    "expected_answer": -97,
+    "category": "algebra",
+    "subtype": "a*x=b",
+    "split": "fresh_test_2026_11_06"
+  },
+  {
+    "question": "x-36=-76,x=?",
+    "expected_answer": -40,
+    "category": "algebra",
+    "subtype": "x-a=b",
+    "split": "fresh_test_2026_11_06"
+  },
+  {
+    "question": "1440/96=?",
+    "expected_answer": 15,
+    "category": "division",
+    "subtype": "division",
+    "split": "fresh_test_2026_11_06"
+  },
+  {
+    "question": "66-138=?",
+    "expected_answer": -72,
+    "category": "subtraction",
+    "subtype": "subtraction",
+    "split": "fresh_test_2026_11_06"
+  },
+  {
+    "question": "184+141=?",
+    "expected_answer": 325,
+    "category": "addition",
+    "subtype": "addition",
+    "split": "fresh_test_2026_11_06"
+  },
+  {
+    "question": "28*3=?",
+    "expected_answer": 84,
+    "category": "multiplication",
+    "subtype": "multiplication",
+    "split": "fresh_test_2026_11_06"
+  },
+  {
+    "question": "14*34=?",
+    "expected_answer": 476,
+    "category": "multiplication",
+    "subtype": "multiplication",
+    "split": "fresh_test_2026_11_06"
+  },
+  {
+    "question": "32+25=?",
+    "expected_answer": 57,
+    "category": "addition",
+    "subtype": "addition",
+    "split": "fresh_test_2026_11_06"
+  },
+  {
+    "question": "77+41=?",
+    "expected_answer": 118,
+    "category": "addition",
+    "subtype": "addition",
+    "split": "fresh_test_2026_11_06"
+  },
+  {
+    "question": "20-81=?",
+    "expected_answer": -61,
+    "category": "subtraction",
+    "subtype": "subtraction",
+    "split": "fresh_test_2026_11_06"
+  },
+  {
+    "question": "2+69=?",
+    "expected_answer": 71,
+    "category": "addition",
+    "subtype": "addition",
+    "split": "fresh_test_2026_11_06"
+  },
+  {
+    "question": "193-156=?",
+    "expected_answer": 37,
+    "category": "subtraction",
+    "subtype": "subtraction",
+    "split": "fresh_test_2026_11_06"
+  },
+  {
+    "question": "236/4=?",
+    "expected_answer": 59,
+    "category": "division",
+    "subtype": "division",
+    "split": "fresh_test_2026_11_06"
+  },
+  {
+    "question": "264/3=?",
+    "expected_answer": 88,
+    "category": "division",
+    "subtype": "division",
+    "split": "fresh_test_2026_11_06"
+  },
+  {
+    "question": "66*67=?",
+    "expected_answer": 4422,
+    "category": "multiplication",
+    "subtype": "multiplication",
+    "split": "fresh_test_2026_11_06"
+  },
+  {
+    "question": "147-0=?",
+    "expected_answer": 147,
+    "category": "subtraction",
+    "subtype": "subtraction",
+    "split": "fresh_test_2026_11_06"
+  },
+  {
+    "question": "440/44=?",
+    "expected_answer": 10,
+    "category": "division",
+    "subtype": "division",
+    "split": "fresh_test_2026_11_06"
+  },
+  {
+    "question": "191+4=?",
+    "expected_answer": 195,
+    "category": "addition",
+    "subtype": "addition",
+    "split": "fresh_test_2026_11_06"
+  },
+  {
+    "question": "4968/69=?",
+    "expected_answer": 72,
+    "category": "division",
+    "subtype": "division",
+    "split": "fresh_test_2026_11_06"
+  },
+  {
+    "question": "4788/63=?",
+    "expected_answer": 76,
+    "category": "division",
+    "subtype": "division",
+    "split": "fresh_test_2026_11_06"
+  },
+  {
+    "question": "164-149=?",
+    "expected_answer": 15,
+    "category": "subtraction",
+    "subtype": "subtraction",
+    "split": "fresh_test_2026_11_06"
+  },
+  {
+    "question": "197-146=?",
+    "expected_answer": 51,
+    "category": "subtraction",
+    "subtype": "subtraction",
+    "split": "fresh_test_2026_11_06"
+  },
+  {
+    "question": "10-x=6,x=?",
+    "expected_answer": 4,
+    "category": "algebra",
+    "subtype": "a-x=b",
+    "split": "fresh_test_2026_11_06"
+  },
+  {
+    "question": "1634/86=?",
+    "expected_answer": 19,
+    "category": "division",
+    "subtype": "division",
+    "split": "fresh_test_2026_11_06"
+  },
+  {
+    "question": "144-36=?",
+    "expected_answer": 108,
+    "category": "subtraction",
+    "subtype": "subtraction",
+    "split": "fresh_test_2026_11_06"
+  },
+  {
+    "question": "1136/16=?",
+    "expected_answer": 71,
+    "category": "division",
+    "subtype": "division",
+    "split": "fresh_test_2026_11_06"
+  },
+  {
+    "question": "103-130=?",
+    "expected_answer": -27,
+    "category": "subtraction",
+    "subtype": "subtraction",
+    "split": "fresh_test_2026_11_06"
+  },
+  {
+    "question": "198-10=?",
+    "expected_answer": 188,
+    "category": "subtraction",
+    "subtype": "subtraction",
+    "split": "fresh_test_2026_11_06"
+  },
+  {
+    "question": "x-26=-15,x=?",
+    "expected_answer": 11,
+    "category": "algebra",
+    "subtype": "x-a=b",
+    "split": "fresh_test_2026_11_06"
+  },
+  {
+    "question": "48+112=?",
+    "expected_answer": 160,
+    "category": "addition",
+    "subtype": "addition",
+    "split": "fresh_test_2026_11_06"
+  },
+  {
+    "question": "70*86=?",
+    "expected_answer": 6020,
+    "category": "multiplication",
+    "subtype": "multiplication",
+    "split": "fresh_test_2026_11_06"
+  },
+  {
+    "question": "33*24=?",
+    "expected_answer": 792,
+    "category": "multiplication",
+    "subtype": "multiplication",
+    "split": "fresh_test_2026_11_06"
+  },
+  {
+    "question": "x/33=-16,x=?",
+    "expected_answer": -528,
+    "category": "algebra",
+    "subtype": "x/a=b",
+    "split": "fresh_test_2026_11_06"
+  },
+  {
+    "question": "1053/27=?",
+    "expected_answer": 39,
+    "category": "division",
+    "subtype": "division",
+    "split": "fresh_test_2026_11_06"
+  },
+  {
+    "question": "90*97=?",
+    "expected_answer": 8730,
+    "category": "multiplication",
+    "subtype": "multiplication",
+    "split": "fresh_test_2026_11_06"
+  },
+  {
+    "question": "67*26=?",
+    "expected_answer": 1742,
+    "category": "multiplication",
+    "subtype": "multiplication",
+    "split": "fresh_test_2026_11_06"
+  },
+  {
+    "question": "70*40=?",
+    "expected_answer": 2800,
+    "category": "multiplication",
+    "subtype": "multiplication",
+    "split": "fresh_test_2026_11_06"
+  },
+  {
+    "question": "x-71=-100,x=?",
+    "expected_answer": -29,
+    "category": "algebra",
+    "subtype": "x-a=b",
+    "split": "fresh_test_2026_11_06"
+  },
+  {
+    "question": "779/41=?",
+    "expected_answer": 19,
+    "category": "division",
+    "subtype": "division",
+    "split": "fresh_test_2026_11_06"
+  },
+  {
+    "question": "66+132=?",
+    "expected_answer": 198,
+    "category": "addition",
+    "subtype": "addition",
+    "split": "fresh_test_2026_11_06"
+  },
+  {
+    "question": "78+173=?",
+    "expected_answer": 251,
+    "category": "addition",
+    "subtype": "addition",
+    "split": "fresh_test_2026_11_06"
+  },
+  {
+    "question": "71-x=114,x=?",
+    "expected_answer": -43,
+    "category": "algebra",
+    "subtype": "a-x=b",
+    "split": "fresh_test_2026_11_06"
+  },
+  {
+    "question": "163-84=?",
+    "expected_answer": 79,
+    "category": "subtraction",
+    "subtype": "subtraction",
+    "split": "fresh_test_2026_11_06"
+  },
+  {
+    "question": "42*x=-1512,x=?",
+    "expected_answer": -36,
+    "category": "algebra",
+    "subtype": "a*x=b",
+    "split": "fresh_test_2026_11_06"
+  },
+  {
+    "question": "7+8=?",
+    "expected_answer": 15,
+    "category": "addition",
+    "subtype": "addition",
+    "split": "fresh_test_2026_11_06"
+  },
+  {
+    "question": "42*86=?",
+    "expected_answer": 3612,
+    "category": "multiplication",
+    "subtype": "multiplication",
+    "split": "fresh_test_2026_11_06"
+  },
+  {
+    "question": "4505/85=?",
+    "expected_answer": 53,
+    "category": "division",
+    "subtype": "division",
+    "split": "fresh_test_2026_11_06"
+  },
+  {
+    "question": "58*89=?",
+    "expected_answer": 5162,
+    "category": "multiplication",
+    "subtype": "multiplication",
+    "split": "fresh_test_2026_11_06"
+  },
+  {
+    "question": "5*79=?",
+    "expected_answer": 395,
+    "category": "multiplication",
+    "subtype": "multiplication",
+    "split": "fresh_test_2026_11_06"
+  },
+  {
+    "question": "2184/52=?",
+    "expected_answer": 42,
+    "category": "division",
+    "subtype": "division",
+    "split": "fresh_test_2026_11_06"
+  },
+  {
+    "question": "37+172=?",
+    "expected_answer": 209,
+    "category": "addition",
+    "subtype": "addition",
+    "split": "fresh_test_2026_11_06"
+  },
+  {
+    "question": "93*16=?",
+    "expected_answer": 1488,
+    "category": "multiplication",
+    "subtype": "multiplication",
+    "split": "fresh_test_2026_11_06"
+  },
+  {
+    "question": "x+86=104,x=?",
+    "expected_answer": 18,
+    "category": "algebra",
+    "subtype": "x+a=b",
+    "split": "fresh_test_2026_11_06"
+  },
+  {
+    "question": "89-x=-7,x=?",
+    "expected_answer": 96,
+    "category": "algebra",
+    "subtype": "a-x=b",
+    "split": "fresh_test_2026_11_06"
+  },
+  {
+    "question": "15*78=?",
+    "expected_answer": 1170,
+    "category": "multiplication",
+    "subtype": "multiplication",
+    "split": "fresh_test_2026_11_06"
+  },
+  {
+    "question": "570/10=?",
+    "expected_answer": 57,
+    "category": "division",
+    "subtype": "division",
+    "split": "fresh_test_2026_11_06"
+  },
+  {
+    "question": "x-15=-41,x=?",
+    "expected_answer": -26,
+    "category": "algebra",
+    "subtype": "x-a=b",
+    "split": "fresh_test_2026_11_06"
+  },
+  {
+    "question": "57-133=?",
+    "expected_answer": -76,
+    "category": "subtraction",
+    "subtype": "subtraction",
+    "split": "fresh_test_2026_11_06"
+  },
+  {
+    "question": "136-130=?",
+    "expected_answer": 6,
+    "category": "subtraction",
+    "subtype": "subtraction",
+    "split": "fresh_test_2026_11_06"
+  },
+  {
+    "question": "744/12=?",
+    "expected_answer": 62,
+    "category": "division",
+    "subtype": "division",
+    "split": "fresh_test_2026_11_06"
+  },
+  {
+    "question": "2368/74=?",
+    "expected_answer": 32,
+    "category": "division",
+    "subtype": "division",
+    "split": "fresh_test_2026_11_06"
+  },
+  {
+    "question": "184+152=?",
+    "expected_answer": 336,
+    "category": "addition",
+    "subtype": "addition",
+    "split": "fresh_test_2026_11_06"
+  },
+  {
+    "question": "0-141=?",
+    "expected_answer": -141,
+    "category": "subtraction",
+    "subtype": "subtraction",
+    "split": "fresh_test_2026_11_06"
+  },
+  {
+    "question": "33*32=?",
+    "expected_answer": 1056,
+    "category": "multiplication",
+    "subtype": "multiplication",
+    "split": "fresh_test_2026_11_06"
+  }
+]
